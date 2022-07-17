@@ -5,7 +5,10 @@
     <projectFile>Testing CmdLineTokenizer in program/Testing CmdLineTokenizer in program.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f166de66-0129-4dd3-97ec-5f5ed37f2c61" name="Changes" comment="" />
+    <list default="true" id="f166de66-0129-4dd3-97ec-5f5ed37f2c61" name="Changes" comment="Start">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KurtsTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KurtsTools/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,9 +152,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="New Start" />
     <MESSAGE value="Cleaned up" />
-    <MESSAGE value="Start" />
     <MESSAGE value="included som test files" />
-    <option name="LAST_COMMIT_MESSAGE" value="included som test files" />
+    <MESSAGE value="Start" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
