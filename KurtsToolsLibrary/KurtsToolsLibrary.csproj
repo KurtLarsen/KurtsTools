@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Include CmdLineTokenizer, FileMetadataSnapshot, KurtsFileTools, BracketingFilesOrganizer, KurtsExifToolWrapper</Description>
+        <PackageVersion>1.0.1</PackageVersion>
+        <Title>Kurts Tools Library</Title>
+        <Copyright>Kurt Larsen</Copyright>
+    </PropertyGroup>
+
+</Project>
