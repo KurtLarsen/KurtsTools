@@ -58,8 +58,8 @@ public static partial class PhotoTools{
 
     private static List<PhotoInfo> GetListOfPhotoInfos(string directoryPath, string pathToExifToolExe){
         (XmlDocument xmlDocument, string? _) =
-            ExifToolWrapper(
-                new ExifToolWrapperParameters{ PathToExifToolExe = pathToExifToolExe, Files = new[]{ directoryPath } });
+            GetExif(
+                new ExifArgument{ PathToExifToolExe = pathToExifToolExe, Files = new[]{ directoryPath } });
 
         List<PhotoInfo> listOfPhotoInfos = new();
 

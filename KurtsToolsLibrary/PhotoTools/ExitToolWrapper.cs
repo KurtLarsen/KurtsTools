@@ -5,21 +5,21 @@ using System.Xml;
 namespace KurtsToolsLibrary.PhotoTools;
 
 public static partial class PhotoTools{
-    public static (XmlDocument xmlDocument, string? messageFromExitTool) ExifToolWrapper(ExifToolWrapperParameters exifToolWrapperParameters){
-        if (exifToolWrapperParameters.PathToExifToolExe == null)
-            throw new ExifToolWrapperException(ExifToolExceptionId.PathToExifToolExeIsNull);
-        if (!File.Exists(exifToolWrapperParameters.PathToExifToolExe))
-            throw new ExifToolWrapperException(ExifToolExceptionId.PathToExifToolExeNotFound,exifToolWrapperParameters.PathToExifToolExe);
-        if (exifToolWrapperParameters.Files == null)
-            throw new ExifToolWrapperException(ExifToolExceptionId.FileArrayIsNull);
-        if ( exifToolWrapperParameters.Files.Length == 0)
-            throw new ExifToolWrapperException(ExifToolExceptionId.FileArrayIsEmpty);
+    public static (XmlDocument xmlDocument, string? messageFromExitTool) GetExif(ExifArgument exifArgument){
+        if (exifArgument.PathToExifToolExe == null)
+            throw new ExifException(ExifExceptionId.PathToExifToolExeIsNull);
+        if (!File.Exists(exifArgument.PathToExifToolExe))
+            throw new ExifException(ExifExceptionId.PathToExifToolExeNotFound,exifArgument.PathToExifToolExe);
+        if (exifArgument.Files == null)
+            throw new ExifException(ExifExceptionId.FileArrayIsNull);
+        if ( exifArgument.Files.Length == 0)
+            throw new ExifException(ExifExceptionId.FileArrayIsEmpty);
         
         Process p = new(){
             StartInfo = new ProcessStartInfo{
-                FileName = exifToolWrapperParameters.PathToExifToolExe,
-                Arguments = OptionBuilder(exifToolWrapperParameters.Options) +
-                            FileBuilder(exifToolWrapperParameters.Files),
+                FileName = exifArgument.PathToExifToolExe,
+                Arguments = OptionBuilder(exifArgument.Options) +
+                            FileBuilder(exifArgument.Files),
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
             },
@@ -49,13 +49,13 @@ public static partial class PhotoTools{
         
         do{
             processHasOutput = false;
-            p.WaitForExit(exifToolWrapperParameters.TimeoutMilliSec); // continues after max. TimeoutMilliSec.
+            p.WaitForExit(exifArgument.TimeoutMilliSec); // continues after max. TimeoutMilliSec.
         } while (!p.HasExited && processHasOutput);
 
         p.WaitForExit();
 
         if (string.IsNullOrEmpty(stdOutBuffer)){
-            throw new ExifToolWrapperException(ExifToolExceptionId.ExifToolDidNotReturnAnyOutput);
+            throw new ExifException(ExifExceptionId.ExifToolDidNotReturnAnyOutput);
         }
 
 
@@ -63,7 +63,7 @@ public static partial class PhotoTools{
         try{
             xmlDocument.LoadXml(stdOutBuffer);
         } catch (Exception e){
-            throw new ExifToolWrapperException(ExifToolExceptionId.ErrorLoadingOutputFromExifToolIntoXmlDocument,e.Message);
+            throw new ExifException(ExifExceptionId.ErrorLoadingOutputFromExifToolIntoXmlDocument,e.Message);
         }
 
 
@@ -87,22 +87,22 @@ public static partial class PhotoTools{
     }
 }
 
-public class ExifToolWrapperException : Exception{
-    private readonly ExifToolExceptionId _exceptionId;
+public class ExifException : Exception{
+    private readonly ExifExceptionId _id;
 
-    public ExifToolWrapperException(ExifToolExceptionId id){
-        _exceptionId = id;
+    public ExifException(ExifExceptionId exifExceptionId){
+        _id = exifExceptionId;
     }
 
-    public ExifToolWrapperException(ExifToolExceptionId id, string data):base(data){
-        _exceptionId = id;
+    public ExifException(ExifExceptionId exifExceptionId, string data):base(data){
+        _id = exifExceptionId;
     }
 
     // ReSharper disable once ConvertToAutoProperty
-    public ExifToolExceptionId ExceptionId => _exceptionId;
+    public ExifExceptionId Id => _id;
 }
 
-public enum ExifToolExceptionId{
+public enum ExifExceptionId{
     PathToExifToolExeIsNull=1,
     PathToExifToolExeNotFound=2,
     FileArrayIsNull=3,
@@ -113,7 +113,7 @@ public enum ExifToolExceptionId{
 
 [SuppressMessage("ReSharper", "ConvertToConstant.Global")]
 [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Global")]
-public record ExifToolWrapperParameters{
+public record ExifArgument{
     public string? PathToExifToolExe;
     public string[]? Files;
     public string? Options;

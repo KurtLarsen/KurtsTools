@@ -1,22 +1,24 @@
 ﻿# KurtsTools
-If you just want to use/try out this tool, you can download it as a nuget package from the project root.
+If you just want to try out this tool, you can download it as a nuget package from the project root.
 ## CmdLineTokenizer
 ### Classes
 * CmdLineTokenizer
-## FileTools
+# DirectoryTools
 ### Functions
 * DirectoryStructureIsEqual
-* GetMd5Hash
-* GetMetaDataDifFlags
-* record MetaData
 ### Methods
 * CopyDirectory
 * NewTempDirectory
 * DeleteDirectory
 * BuildDirectoryStructure
+## FileTools
+### Functions
+* GetMd5Hash
+* GetMetaData
+* GetMetaDataDifferences
 ## PhotoTools
 ### Functions
-* ExifToolWrapper
+* GetExif
 ### methods
 * MoveStackPhotosToSubDirectories
 ## XmlTools

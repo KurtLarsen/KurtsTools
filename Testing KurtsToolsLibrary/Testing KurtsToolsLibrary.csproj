@@ -336,6 +336,96 @@
       <None Update="Testing DirectoryTools\Testing BuildDirectoryStructure\TestData for Testing BuildDirectoryStructure\fileWithContent.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1833.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1834.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1835.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1836.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1837.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1838.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\7P2A1833.CR3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\7p2a1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\a.cr3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\allMetadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 file from Canon R5.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 to jpg via LR, incl All Metadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 to jpg via LR, incl Copyright Only.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 to jpg via LR, remove metadata via exiftool.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3, alle egenskaber fjernet af windows 10.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3, remove metadata via exiftool.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\exif.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\image file from internet.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\noMetadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\NonImageFile.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\timestamp.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\zero-length-file.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 files\7P2A1833.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 files\7P2A1834.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 files\7P2A1835.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 files\7P2A1836.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 files\7P2A1837.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\cr3 files\7P2A1838.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
