@@ -6,23 +6,24 @@ public static partial class FileTools{
         return new MetaData(pathToFile, includeFileContent);
     }
     
-    public static MetaDataFilter GetMetaDataDifferences(MetaData md1, MetaData md2, MetaDataFilter fieldsOfInterest){
-        MetaDataFilter result = ((MetaDataFilter)md1.Attributes ^ (MetaDataFilter)md2.Attributes) &
+    public static MetaDataFlags GetMetaDataDifferences(MetaData md1, MetaData md2, MetaDataFlags fieldsOfInterest=MetaDataFlags.All){
+        MetaDataFlags result = ((MetaDataFlags)md1.Attributes ^ (MetaDataFlags)md2.Attributes) &
                                 fieldsOfInterest;
-        if ((fieldsOfInterest & MetaDataFilter.Path) != 0)
-            result |= md1.Path != md2.Path ? MetaDataFilter.Path : MetaDataFilter.None;
-        if ((fieldsOfInterest & MetaDataFilter.Exists) != 0)
-            result |= md1.Exists != md2.Exists ? MetaDataFilter.Exists : MetaDataFilter.None;
-        if ((fieldsOfInterest & MetaDataFilter.Hash) != 0)
-            result |= md1.Hash != md2.Hash ? MetaDataFilter.Hash : MetaDataFilter.None;
-        if ((fieldsOfInterest & MetaDataFilter.Length) != 0)
-            result |= md1.Length != md2.Length ? MetaDataFilter.Length : MetaDataFilter.None;
-        if ((fieldsOfInterest & MetaDataFilter.CreationTime) != 0)
-            result |= md1.CreationTime != md2.CreationTime ? MetaDataFilter.CreationTime : MetaDataFilter.None;
-        if ((fieldsOfInterest & MetaDataFilter.LastAccessTime) != 0)
-            result |= md1.LastAccessTime != md2.LastAccessTime ? MetaDataFilter.LastAccessTime : MetaDataFilter.None;
-        if ((fieldsOfInterest & MetaDataFilter.LastWriteTime) != 0)
-            result |= md1.LastWriteTime != md2.LastWriteTime ? MetaDataFilter.LastWriteTime : MetaDataFilter.None;
+        
+        if ((fieldsOfInterest & MetaDataFlags.Path) != 0)
+            result |= md1.Path != md2.Path ? MetaDataFlags.Path : MetaDataFlags.None;
+        if ((fieldsOfInterest & MetaDataFlags.Exists) != 0)
+            result |= md1.Exists != md2.Exists ? MetaDataFlags.Exists : MetaDataFlags.None;
+        if ((fieldsOfInterest & MetaDataFlags.Hash) != 0)
+            result |= md1.Hash != md2.Hash ? MetaDataFlags.Hash : MetaDataFlags.None;
+        if ((fieldsOfInterest & MetaDataFlags.Length) != 0)
+            result |= md1.Length != md2.Length ? MetaDataFlags.Length : MetaDataFlags.None;
+        if ((fieldsOfInterest & MetaDataFlags.CreationTime) != 0)
+            result |= md1.CreationTime != md2.CreationTime ? MetaDataFlags.CreationTime : MetaDataFlags.None;
+        if ((fieldsOfInterest & MetaDataFlags.LastAccessTime) != 0)
+            result |= md1.LastAccessTime != md2.LastAccessTime ? MetaDataFlags.LastAccessTime : MetaDataFlags.None;
+        if ((fieldsOfInterest & MetaDataFlags.LastWriteTime) != 0)
+            result |= md1.LastWriteTime != md2.LastWriteTime ? MetaDataFlags.LastWriteTime : MetaDataFlags.None;
 
         return result;
     }
@@ -43,7 +44,7 @@ public record MetaData{
 
     public readonly byte[]? Hash;
 
-    // constructor can not be used outside this namespece. Use function GetMetaData instead
+    // constructor can not be used outside this namespaces. Use function GetMetaData instead
     internal MetaData(string path, bool includeFileContent = false){
         Path = path;
         CaptureTime = DateTime.Now;
@@ -61,32 +62,32 @@ public record MetaData{
         LastWriteTime = fileInfo.LastWriteTime;
 
         if (includeFileContent)
-            Hash = FileTools.GetMd5Hash(path);
+            Hash = GetMd5Hash(path);
     }
 
     public override string ToString(){
-        return ToString(MetaDataFilter.All);
+        return ToString(MetaDataFlags.All);
     }
 
-    public string ToString(MetaDataFilter fieldsOfInterest){
+    public string ToString(MetaDataFlags fieldsOfInterest){
         string s = "";
 
-        if ((fieldsOfInterest & MetaDataFilter.CaptureTime) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.CaptureTime) != 0){
             s += (s == "" ? "" : ", ") + $"CaptureTime=<{CaptureTime:O}>";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.Attributes) != 0)
+        if ((fieldsOfInterest & MetaDataFlags.Attributes) != 0)
             s += (s == "" ? "" : ", ") + $"Attributes={{{(Attributes & (FileAttributes)fieldsOfInterest).ToString()}}}";
 
-        if ((fieldsOfInterest & MetaDataFilter.Path) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.Path) != 0){
             s += (s == "" ? "" : ", ") + $"Path=<{Path}>";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.Exists) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.Exists) != 0){
             s += (s == "" ? "" : ", ") + $"Exists=<{Exists}>";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.Hash) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.Hash) != 0){
             string value;
             if (Hash == null){
                 value = "<null>";
@@ -99,19 +100,19 @@ public record MetaData{
             s += (s == "" ? "" : ", ") + $"Hash={value}";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.Length) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.Length) != 0){
             s += (s == "" ? "" : ", ") + $"Length=<{Length}>";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.CreationTime) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.CreationTime) != 0){
             s += (s == "" ? "" : ", ") + $"CreationTime=<{CreationTime:O}>";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.LastWriteTime) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.LastWriteTime) != 0){
             s += (s == "" ? "" : ", ") + $"LastWriteTime=<{LastWriteTime:O}>";
         }
 
-        if ((fieldsOfInterest & MetaDataFilter.LastAccessTime) != 0){
+        if ((fieldsOfInterest & MetaDataFlags.LastAccessTime) != 0){
             s += (s == "" ? "" : ", ") + $"LastAccessTime=<{LastAccessTime:O}>";
         }
 
@@ -120,8 +121,9 @@ public record MetaData{
 }
 
 [Flags]
-public enum MetaDataFilter{
+public enum MetaDataFlags{
     // @formatter:off
+    // Index 0 to 17 is equivalent to Windows FileAttributes
     None              = 0,
     ReadOnly          = 1 << 0,
     Hidden            = 1 << 1,

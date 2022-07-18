@@ -222,9 +222,6 @@
       <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1838.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing BuildDirectoryStructure\TestData for Testing BuildDirectoryStructure\fileWithContent.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
       <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1833.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
@@ -334,6 +331,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-47-94.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing DirectoryTools\Testing BuildDirectoryStructure\TestData for Testing BuildDirectoryStructure\fileWithContent.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

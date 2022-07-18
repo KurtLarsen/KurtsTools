@@ -1,4 +1,5 @@
-﻿using KurtsToolsLibrary.FileTools;
+﻿using KurtsToolsLibrary.DirectoryTools;
+using KurtsToolsLibrary.FileTools;
 using NUnit.Framework;
 
 namespace Testing_KurtsToolsLibrary.Testing_File_Tools;
@@ -10,12 +11,12 @@ public class Testing_MetaData{
 
     [SetUp]
     public void SetUp(){
-        _tempDir = FileTools.NewTempDirectory();
+        _tempDir = DirectoryTools.NewTempDirectory();
     }
 
     [TearDown]
     public void TearDown(){
-        FileTools.DeleteDirectory(_tempDir);
+        DirectoryTools.DeleteDirectory(_tempDir);
     }
 
     [Test]
@@ -31,10 +32,10 @@ public class Testing_MetaData{
         FileTools.MetaData metaDataCopy = FileTools.GetMetaData(copyFile);
 
 
-        FileTools.MetaDataFilter difFlags = FileTools.GetMetaDataDifferences(metaDataOriginal, metaDataCopy,
-            FileTools.MetaDataFilter.All & ~FileTools.MetaDataFilter.Path & ~FileTools.MetaDataFilter.CreationTime & ~FileTools.MetaDataFilter.LastAccessTime);
+        FileTools.MetaDataFlags difFlags = FileTools.GetMetaDataDifferences(metaDataOriginal, metaDataCopy,
+            FileTools.MetaDataFlags.All & ~FileTools.MetaDataFlags.Path & ~FileTools.MetaDataFlags.CreationTime & ~FileTools.MetaDataFlags.LastAccessTime);
 
-        Assert.That(difFlags, Is.EqualTo(FileTools.MetaDataFilter.None),
+        Assert.That(difFlags, Is.EqualTo(FileTools.MetaDataFlags.None),
             $"{metaDataOriginal.ToString(difFlags)}\n{metaDataCopy.ToString(difFlags)}");
     }
 
@@ -47,7 +48,7 @@ public class Testing_MetaData{
 
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.Attributes);
+        string s = md.ToString(FileTools.MetaDataFlags.Attributes);
         Assert.That(s, Is.EqualTo("Attributes={ReadOnly, Archive}"));
 
     }
@@ -58,7 +59,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.Path);
+        string s = md.ToString(FileTools.MetaDataFlags.Path);
         Assert.That(s, Is.EqualTo($"Path=<{path}>"));
     }
 
@@ -68,7 +69,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.Exists);
+        string s = md.ToString(FileTools.MetaDataFlags.Exists);
         Assert.That(s, Is.EqualTo($"Exists=<{true}>"));
     }
 
@@ -78,7 +79,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path, true);
 
-        string s = md.ToString(FileTools.MetaDataFilter.Hash);
+        string s = md.ToString(FileTools.MetaDataFlags.Hash);
         Assert.That(s, Does.Match(@"Hash=\{\d{1,3}(,\s(\d{1,3}))*\}"));
     }
 
@@ -88,7 +89,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.Hash);
+        string s = md.ToString(FileTools.MetaDataFlags.Hash);
         Assert.That(s, Is.EqualTo("Hash=<null>"));
     }
 
@@ -98,7 +99,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.Length);
+        string s = md.ToString(FileTools.MetaDataFlags.Length);
         Assert.That(s, Does.Match(@"Length=<\d+>"));
     }
     
@@ -108,7 +109,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.CreationTime);
+        string s = md.ToString(FileTools.MetaDataFlags.CreationTime);
         Assert.That(s, Does.Match("CreationTime=<"+DataTimeRegex+">")); // >
     }
 
@@ -118,7 +119,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.LastAccessTime);
+        string s = md.ToString(FileTools.MetaDataFlags.LastAccessTime);
         Assert.That(s, Does.Match("LastAccessTime=<"+DataTimeRegex+">")); // >
     }
 
@@ -128,7 +129,7 @@ public class Testing_MetaData{
         File.WriteAllText(path, "abc");
         FileTools.MetaData md = FileTools.GetMetaData(path);
 
-        string s = md.ToString(FileTools.MetaDataFilter.LastWriteTime);
+        string s = md.ToString(FileTools.MetaDataFlags.LastWriteTime);
         Assert.That(s, Does.Match("LastWriteTime=<"+DataTimeRegex+">")); // >
     }
     

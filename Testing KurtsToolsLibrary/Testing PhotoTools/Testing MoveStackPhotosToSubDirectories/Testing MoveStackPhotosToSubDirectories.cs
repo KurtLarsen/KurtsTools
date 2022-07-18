@@ -1,4 +1,4 @@
-﻿using KurtsToolsLibrary.FileTools;
+﻿using KurtsToolsLibrary.DirectoryTools;
 using KurtsToolsLibrary.PhotoTools;
 using NUnit.Framework;
 
@@ -26,14 +26,14 @@ public class Testing_MoveStackPhotosToSubDirectories{
         
         Assume.That(testDataDirectory,Does.Exist);
         
-        _tempDir =FileTools. NewTempDirectory();
+        _tempDir =DirectoryTools. NewTempDirectory();
 
-        FileTools.CopyDirectory(testDataDirectory,_tempDir);
+        DirectoryTools.CopyDirectory(testDataDirectory,_tempDir);
     }
 
     [TearDown]
     public void TearDown(){
-        FileTools.DeleteDirectory(_tempDir);
+        DirectoryTools.DeleteDirectory(_tempDir);
     }
 
     [Test]

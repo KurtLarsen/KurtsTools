@@ -1,9 +1,9 @@
 ﻿using System.Xml;
-using KurtsToolsLibrary.FileTools;
-using NUnit.Framework;
+using KurtsToolsLibrary.DirectoryTools;
 using KurtsToolsLibrary.XmlTools;
+using NUnit.Framework;
 
-namespace Testing_KurtsToolsLibrary.Testing_File_Tools;
+namespace Testing_KurtsToolsLibrary.Testing_DirectoryTools;
 
 [TestFixture]
 public class Testing_CopyDirectory{
@@ -13,8 +13,8 @@ public class Testing_CopyDirectory{
 
     [SetUp]
     public void SetUp(){
-        _tempFromDirectory = FileTools.NewTempDirectory();
-        _tempToDirectory = FileTools.NewTempDirectory();
+        _tempFromDirectory = DirectoryTools.NewTempDirectory();
+        _tempToDirectory = DirectoryTools.NewTempDirectory();
 
         XmlDocument xmlFileStructure = XmlTools.StringToXmlDocument("<root>" +
                                                                     "    <directory name='subdir1'>" +
@@ -25,19 +25,19 @@ public class Testing_CopyDirectory{
                                                                     "    <file name='file3.txt' />" +
                                                                     "    <file name='file4.txt' />" +
                                                                     "</root>");
-        FileTools.BuildDirectoryStructure(_tempFromDirectory, xmlFileStructure.DocumentElement!);
+        DirectoryTools.BuildDirectoryStructure(_tempFromDirectory, xmlFileStructure.DocumentElement!);
     }
 
 
     [TearDown]
     public void TearDown(){
-        FileTools.DeleteDirectory(_tempFromDirectory);
-        FileTools.DeleteDirectory(_tempToDirectory);
+        DirectoryTools.DeleteDirectory(_tempFromDirectory);
+        DirectoryTools.DeleteDirectory(_tempToDirectory);
     }
 
     [Test]
     public void CopyDirectory_can_copy_to_existing_directory(){
-        FileTools.CopyDirectory(_tempFromDirectory, _tempToDirectory);
+        DirectoryTools.CopyDirectory(_tempFromDirectory, _tempToDirectory);
 
         Assert.That(_tempToDirectory + "subdir1", Does.Exist);
         Assert.That(_tempToDirectory + "subdir1" + Path.DirectorySeparatorChar + "file1.txt", Does.Exist);
@@ -49,10 +49,10 @@ public class Testing_CopyDirectory{
 
     [Test]
     public void CopyDirectory_can_copy_to_non_existing_directory(){
-        FileTools.DeleteDirectory(_tempToDirectory);
+        DirectoryTools.DeleteDirectory(_tempToDirectory);
         Assume.That(_tempToDirectory, Does.Not.Exist);
 
-        FileTools.CopyDirectory(_tempFromDirectory, _tempToDirectory);
+        DirectoryTools.CopyDirectory(_tempFromDirectory, _tempToDirectory);
 
         Assert.That(_tempToDirectory, Does.Exist);
         Assert.That(_tempToDirectory + "subdir1", Does.Exist);
@@ -65,7 +65,7 @@ public class Testing_CopyDirectory{
 
     [Test]
     public void Non_recursive_CopyDirectory_can_copy_to_existing_directory(){
-        FileTools.CopyDirectory(_tempFromDirectory, _tempToDirectory, false);
+        DirectoryTools.CopyDirectory(_tempFromDirectory, _tempToDirectory, false);
 
         Assert.That(_tempToDirectory + "subdir1", Does.Not.Exist);
         Assert.That(_tempToDirectory + "subdir1" + Path.DirectorySeparatorChar + "file1.txt", Does.Not.Exist);
@@ -77,10 +77,10 @@ public class Testing_CopyDirectory{
 
     [Test]
     public void Non_recursive_CopyDirectory_can_copy_to_non_existing_directory(){
-        FileTools.DeleteDirectory(_tempToDirectory);
+        DirectoryTools.DeleteDirectory(_tempToDirectory);
         Assume.That(_tempToDirectory, Does.Not.Exist);
 
-        FileTools.CopyDirectory(_tempFromDirectory, _tempToDirectory, false);
+        DirectoryTools.CopyDirectory(_tempFromDirectory, _tempToDirectory, false);
 
         Assert.That(_tempToDirectory, Does.Exist);
         Assert.That(_tempToDirectory + "subdir1", Does.Not.Exist);

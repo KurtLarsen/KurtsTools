@@ -1,17 +1,17 @@
-﻿using KurtsToolsLibrary.FileTools;
+﻿using KurtsToolsLibrary.DirectoryTools;
 using NUnit.Framework;
 
-namespace Testing_KurtsToolsLibrary.Testing_File_Tools;
+namespace Testing_KurtsToolsLibrary.Testing_DirectoryTools;
 
 [TestFixture]
 public class Testing_NewTempDirectory{
 
     [Test]
     public void test_of_something(){
-        string tempDir = FileTools.NewTempDirectory();
+        string tempDir = DirectoryTools.NewTempDirectory();
         Assert.That(tempDir, Does.Exist);
 
-        FileTools.DeleteDirectory(tempDir);
+        DirectoryTools.DeleteDirectory(tempDir);
         
         Assert.That(tempDir,Does.Not.Exist);
     }
