@@ -3,9 +3,9 @@ using System.Security.Cryptography;
 using System.Xml;
 using DirectoryInfo = System.IO.DirectoryInfo;
 
-namespace KurtsToolsLibrary.KurtsFileTools;
+namespace KurtsToolsLibrary.FileTools;
 
-public static partial class KurtsFileTools{
+public static class FileTools{
     public static string DirectoryStructureIsEqual(string path, XmlDocument directoryStructure){
         return DirectoryStructureIsEqual(path, directoryStructure.DocumentElement!);
     }
@@ -165,7 +165,7 @@ public static partial class KurtsFileTools{
                 case "file":{
                     string name = childNode.GetAttribute("name");
                     string path = destinationDirectory + Path.DirectorySeparatorChar + name;
-                    string content = GetContent(childNode);
+                    string content = GetContentToBePutInFile(childNode);
                     File.WriteAllText(path, content);
                     break;
                 }
@@ -179,7 +179,7 @@ public static partial class KurtsFileTools{
     private const string NameOfSourceAttribute = "source";
     
     [SuppressMessage("ReSharper", "InvertIf")]
-    private static string GetContent(XmlElement xmlElement){
+    private static string GetContentToBePutInFile(XmlElement xmlElement){
         if (xmlElement.HasAttribute(NameOfContentAttribute))
             return xmlElement.GetAttribute(NameOfContentAttribute);
         if (xmlElement.HasAttribute(NameOfSourceAttribute)){
@@ -252,7 +252,7 @@ public record MetaData{
         LastWriteTime = fileInfo.LastWriteTime;
 
         if (includeFileContent)
-            Hash = KurtsFileTools.GetMd5Hash(path);
+            Hash = FileTools.GetMd5Hash(path);
     }
 
     public override string ToString(){

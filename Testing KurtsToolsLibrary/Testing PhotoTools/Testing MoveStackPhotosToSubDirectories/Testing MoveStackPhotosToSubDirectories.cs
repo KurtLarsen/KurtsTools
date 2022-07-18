@@ -1,28 +1,39 @@
-﻿using KurtsToolsLibrary.KurtsFileTools;
+﻿using KurtsToolsLibrary.FileTools;
+using KurtsToolsLibrary.PhotoTools;
 using NUnit.Framework;
 
-namespace Testing_KurtsToolsLibrary.Testing_File_Tools.Testing_MoveStackPhotosToSubDirectories;
+namespace Testing_KurtsToolsLibrary.Testing_PhotoTools.Testing_MoveStackPhotosToSubDirectories;
 
 [TestFixture]
 public class Testing_MoveStackPhotosToSubDirectories{
     private const string PathToExifToolExe = @"C:\Program Files\exiftool\exiftool.exe";
+    private static string _pathToTestDataForTestingMoveStackPhotosToSubDirectories = null!;
     private string _tempDir = null!;
-    private const string Fn = $"{nameof(KurtsFileTools)}.{nameof(KurtsFileTools.MoveStackPhotosToSubDirectories)}()";
+    private const string Fn = $"{nameof(PhotoTools)}.{nameof(PhotoTools.MoveStackPhotosToSubDirectories)}()";
 
+    [OneTimeSetUp]
+    public void OneTimeSetup(){
+        _pathToTestDataForTestingMoveStackPhotosToSubDirectories = TestContext.CurrentContext.TestDirectory +
+                                               @"/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories";
+        
+        Assume.That(_pathToTestDataForTestingMoveStackPhotosToSubDirectories,Does.Exist);
+    }
+
+    
     [SetUp]
     public void SetUp(){
-        string testDataDirectory=TestContext.CurrentContext.TestDirectory +
-                                 @"\Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories";
+        string testDataDirectory = _pathToTestDataForTestingMoveStackPhotosToSubDirectories;
+        
         Assume.That(testDataDirectory,Does.Exist);
         
-        _tempDir = KurtsFileTools.NewTempDirectory();
+        _tempDir =FileTools. NewTempDirectory();
 
-        KurtsFileTools.CopyDirectory(testDataDirectory,_tempDir);
+        FileTools.CopyDirectory(testDataDirectory,_tempDir);
     }
 
     [TearDown]
     public void TearDown(){
-        KurtsFileTools.DeleteDirectory(_tempDir);
+        FileTools.DeleteDirectory(_tempDir);
     }
 
     [Test]
@@ -33,7 +44,7 @@ public class Testing_MoveStackPhotosToSubDirectories{
         
         Assume.That(di.GetDirectories().Length,Is.EqualTo(0),$"Number of subDirectories in {nameof(_tempDir)} BEFORE {Fn}");
         
-        KurtsFileTools.MoveStackPhotosToSubDirectories(_tempDir, PathToExifToolExe);
+        PhotoTools.MoveStackPhotosToSubDirectories(_tempDir, PathToExifToolExe);
         
         di.Refresh();
         

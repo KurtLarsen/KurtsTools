@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using KurtsToolsLibrary.KurtsFileTools;
+﻿using KurtsToolsLibrary.FileTools;
+using NUnit.Framework;
 
 namespace Testing_KurtsToolsLibrary.Testing_File_Tools;
 
@@ -10,12 +10,12 @@ public class Testing_MetaData{
 
     [SetUp]
     public void SetUp(){
-        _tempDir = KurtsFileTools.NewTempDirectory();
+        _tempDir = FileTools.NewTempDirectory();
     }
 
     [TearDown]
     public void TearDown(){
-        KurtsFileTools.DeleteDirectory(_tempDir);
+        FileTools.DeleteDirectory(_tempDir);
     }
 
     [Test]
@@ -31,7 +31,7 @@ public class Testing_MetaData{
         MetaData metaDataCopy = new(copyFile);
 
 
-        MetaDataFilter difFlags = KurtsFileTools.GetMetaDataDifFlags(metaDataOriginal, metaDataCopy,
+        MetaDataFilter difFlags = FileTools.GetMetaDataDifFlags(metaDataOriginal, metaDataCopy,
             MetaDataFilter.All & ~MetaDataFilter.Path & ~MetaDataFilter.CreationTime & ~MetaDataFilter.LastAccessTime);
 
         Assert.That(difFlags, Is.EqualTo(MetaDataFilter.None),

@@ -2,9 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Xml;
 
-namespace KurtsToolsLibrary.KurtsFileTools;
+namespace KurtsToolsLibrary.PhotoTools;
 
-public static partial class KurtsFileTools{
+public static partial class PhotoTools{
     public static (XmlDocument xmlDocument, string? messageFromExitTool) ExifToolWrapper(ExifToolWrapperParameters exifToolWrapperParameters){
         if (exifToolWrapperParameters.PathToExifToolExe == null)
             throw new ExifToolWrapperException(ExifToolExceptionId.PathToExifToolExeIsNull);

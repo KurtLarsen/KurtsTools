@@ -1,8 +1,7 @@
-﻿
-
-using System.Xml;
+﻿using System.Xml;
+using KurtsToolsLibrary.FileTools;
 using NUnit.Framework;
-using KurtsToolsLibrary.KurtsFileTools;
+using KurtsToolsLibrary.PhotoTools;
 using KurtsToolsLibrary.XmlTools;
 
 namespace Testing_KurtsToolsLibrary.Testing_File_Tools;
@@ -95,12 +94,12 @@ public class Testing_DirectoryStructureIsEqual{
 
     [SetUp]
     public void SetUp(){
-        _tempDir = KurtsFileTools.NewTempDirectory();
+        _tempDir = FileTools.NewTempDirectory();
     }
 
     [TearDown]
     public void TearDown(){
-        KurtsFileTools.DeleteDirectory(_tempDir);
+        FileTools.DeleteDirectory(_tempDir);
     }
 
     public static IEnumerable<TestCaseData> TestCaseData(){
@@ -118,8 +117,8 @@ public class Testing_DirectoryStructureIsEqual{
     [Test, TestCaseSource(nameof(TestCaseData))]
     public void test_of_DirectoryStructureEqual(XmlDocument directoryStructureToBuild,
         XmlDocument directoryStructureToCompareWith,string expectedResult){
-        KurtsFileTools.BuildDirectoryStructure(_tempDir, directoryStructureToBuild);
-        string result = KurtsFileTools.DirectoryStructureIsEqual(_tempDir, directoryStructureToCompareWith);
-        Assert.That(result,Does.Match(expectedResult), $"Result of {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.DirectoryStructureIsEqual)}()");
+        FileTools.BuildDirectoryStructure(_tempDir, directoryStructureToBuild);
+        string result = FileTools.DirectoryStructureIsEqual(_tempDir, directoryStructureToCompareWith);
+        Assert.That(result,Does.Match(expectedResult), $"Result of {nameof(PhotoTools)}.{nameof(FileTools.DirectoryStructureIsEqual)}()");
     }
 }

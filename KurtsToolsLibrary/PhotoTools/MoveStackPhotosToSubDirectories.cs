@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Xml;
 
-namespace KurtsToolsLibrary.KurtsFileTools;
+namespace KurtsToolsLibrary.PhotoTools;
 
-public static partial class KurtsFileTools{
+public static partial class PhotoTools{
     public static void MoveStackPhotosToSubDirectories(
         string directoryPath,
         string pathToExifToolExe,

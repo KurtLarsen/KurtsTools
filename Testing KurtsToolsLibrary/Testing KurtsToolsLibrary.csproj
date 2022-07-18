@@ -225,25 +225,115 @@
       <None Update="Testing File Tools\Testing BuildDirectoryStructure\TestData for Testing BuildDirectoryStructure\fileWithContent.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-34.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1833.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-52.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1834.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-70.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1835.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-77.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1836.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-85.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1837.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-92.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1838.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing File Tools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-47-94.CR3">
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1833.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1834.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1835.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1836.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1837.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1838.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\7P2A1833.CR3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\7p2a1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\a.cr3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\allMetadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 file from Canon R5.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl All Metadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl Copyright Only.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, remove metadata via exiftool.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3, alle egenskaber fjernet af windows 10.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3, remove metadata via exiftool.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\exif.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\image file from internet.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\noMetadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\NonImageFile.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\timestamp.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\zero-length-file.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-34.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-52.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-70.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-77.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-85.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-92.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\Testing MoveStackPhotosToSubDirectories\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-47-94.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
@@ -276,6 +366,10 @@
       <None Update="Testing PhotoTools\Testing Bracketing Files Organizer\TestData\7P2A2712.CR3.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Testing PhotoTools" />
     </ItemGroup>
 
 </Project>

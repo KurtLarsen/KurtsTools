@@ -6,8 +6,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f166de66-0129-4dd3-97ec-5f5ed37f2c61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KurtsTools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KurtsTools/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurtsToolsLibrary/KurtsFileTools/ExitToolWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KurtsToolsLibrary/PhotoTools/ExitToolWrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurtsToolsLibrary/KurtsFileTools/KurtsFileTools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KurtsToolsLibrary/FileTools/FileTools.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurtsToolsLibrary/KurtsFileTools/MoveStackPhotosToSubDirectories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KurtsToolsLibrary/PhotoTools/MoveStackPhotosToSubDirectories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurtsToolsLibrary/KurtsFileTools/example of output from exifTool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KurtsToolsLibrary/PhotoTools/example of output from exifTool.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KurtsToolsLibrary/KurtsToolsLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/KurtsToolsLibrary/KurtsToolsLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing BuildDirectoryStructure/Testing BuildDirectoryStructure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing BuildDirectoryStructure/Testing BuildDirectoryStructure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing CopyDirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing CopyDirectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing DirectoryStructureIsEqual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing DirectoryStructureIsEqual.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/7P2A1833.CR3.exif" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/7P2A1833.CR3.exif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/7p2a1833.jpg.exif" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/7p2a1833.jpg.exif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/NonImageFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/NonImageFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/a.cr3.exif" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/a.cr3.exif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/allMetadata.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/allMetadata.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 file from Canon R5.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 file from Canon R5.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1833.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1833.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1834.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1834.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1835.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1835.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1836.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1836.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1837.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1837.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1838.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 files/7P2A1838.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, incl All Metadata.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, incl All Metadata.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, incl Copyright Only.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, incl Copyright Only.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, remove metadata via exiftool.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3 to jpg via LR, remove metadata via exiftool.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3, alle egenskaber fjernet af windows 10.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3, alle egenskaber fjernet af windows 10.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3, remove metadata via exiftool.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/cr3, remove metadata via exiftool.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/exif.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/exif.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/image file from internet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/image file from internet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1833.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1833.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1833.jpg.exif" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1833.jpg.exif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1834.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1834.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1835.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1835.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1836.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1836.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1837.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1837.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1838.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/jpg files/7P2A1838.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/noMetadata.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/noMetadata.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/timestamp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/timestamp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/zero-length-file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper/zero-length-file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing ExifToolWrapper/Testing ExifToolWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing ExifToolWrapper/Testing ExifToolWrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MetaData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MetaData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-17-34.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-17-34.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-17-52.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-17-52.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-17-70.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-17-70.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-45-77.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-45-77.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-45-85.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-45-85.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-45-92.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-45-92.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-47-94.CR3" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/TestData for Testing MoveStackPhotosToSubDirectories/timestamp_2022-05-28_13-57-47-94.CR3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/Testing MoveStackPhotosToSubDirectories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing PhotoTools/Testing MoveStackPhotosToSubDirectories/Testing MoveStackPhotosToSubDirectories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing NewTempdirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing NewTempdirectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing KurtsToolsLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing KurtsToolsLibrary.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +105,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7fa45084943ad8a141fb718f21b57d7e234cbad2402e5d2217325b9e4177/XmlDocument.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KurtsNUnitTools/KurtsNUnitTools/FileMetadataSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KurtsNUnitTools/KurtsNUnitTools/FileSystemTools.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/KurtsToolsLibrary/KurtsFileTools/KurtsFileTools.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/KurtsToolsLibrary/KurtsFileTools/example of output from exifTool.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KurtsToolsLibrary/FileTools/FileTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KurtsToolsLibrary/PhotoTools/example of output from exifTool.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing CmdLineTokenizer/Testing constructor for ArgumentTokenizer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,21 +123,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/c_sharp&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/projects/c_sharp",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;XML&quot;,
-      &quot;TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "XML",
+      "TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.TryoutUsingCommandLineArgumentHandler">
     <configuration name="Testing CmdLineTokenizer in program" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -155,17 +205,12 @@
     <MESSAGE value="included som test files" />
     <MESSAGE value="Start" />
     <MESSAGE value="Added README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added README.md" />
+    <MESSAGE value="Added LICENSE.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added LICENSE.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/KurtsToolsLibrary/CmdLineTokenizer/CmdLineTokenizer.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\projects\c_sharp\KurtsTools\KurtsToolsLibrary\Argument Tokenizer\ArgumentTokenizer.cs" initialLine="26" containingFunctionPresentation="method 'Tokens'" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/KurtsToolsLibrary/PhotoTools/ExifTool Wrapper/KurtsExifToolWrapper.cs</url>
           <line>139</line>
@@ -183,19 +228,6 @@
           <line>24</line>
           <properties documentPath="C:\projects\c_sharp\KurtsTools\Testing KurtsToolsLibrary\Testing PhotoTools\Testing Bracketing Files Organizer\Testing_When_Image_Folder_Is_Empty_Invalid_Not_Existing_Ect.cs" initialLine="24" containingFunctionPresentation="method 'ImageFolder_is_empty'" />
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Testing KurtsToolsLibrary/Testing File Tools/Testing MoveStackPhotosToSubDirectories/Testing MoveStackPhotosToSubDirectories.cs</url>
-          <line>49</line>
-          <properties documentPath="C:\projects\c_sharp\KurtsTools\Testing KurtsToolsLibrary\Testing File Tools\Testing MoveStackPhotosToSubDirectories\Testing MoveStackPhotosToSubDirectories.cs" initialLine="44" containingFunctionPresentation="method 'test_of_MoveStackPhotosToSubDirectories'">
-            <startOffsets>
-              <option value="1980" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1981" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

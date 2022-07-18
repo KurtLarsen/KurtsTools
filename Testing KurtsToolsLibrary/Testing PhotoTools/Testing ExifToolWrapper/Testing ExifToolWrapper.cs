@@ -1,12 +1,21 @@
 ﻿using System.Xml;
-using KurtsToolsLibrary.KurtsFileTools;
+using KurtsToolsLibrary.PhotoTools;
 using NUnit.Framework;
 
-namespace Testing_KurtsToolsLibrary.Testing_File_Tools.Testing_ExifToolWrapper;
+namespace Testing_KurtsToolsLibrary.Testing_PhotoTools.Testing_ExifToolWrapper;
 
 [TestFixture]
 public class Testing_ExifToolWrapper{
     private const string ExifToolExe = @"C:\Program Files\exiftool\exiftool.exe";
+    private static string _pathToTestDataForTestingExifWrapper = null!;
+
+    [OneTimeSetUp]
+    public void OneTimeSetup(){
+        _pathToTestDataForTestingExifWrapper = TestContext.CurrentContext.TestDirectory +
+                      @"/Testing PhotoTools/Testing ExifToolWrapper/TestData for Testing ExifToolWrapper";
+        
+        Assume.That(Directory.Exists(_pathToTestDataForTestingExifWrapper));
+    }
 
     [Test]
     public void testing_exePath_is_null(){
@@ -14,7 +23,7 @@ public class Testing_ExifToolWrapper{
         
         ExifToolWrapperException? e = Assert.Throws<ExifToolWrapperException>(
             delegate{
-                KurtsFileTools.ExifToolWrapper(p);
+                PhotoTools.ExifToolWrapper(p);
             });
         
         Assert.That(e!.ExceptionId,Is.EqualTo(ExifToolExceptionId.PathToExifToolExeIsNull));
@@ -29,7 +38,7 @@ public class Testing_ExifToolWrapper{
         
         ExifToolWrapperException? e = Assert.Throws<ExifToolWrapperException>(
             delegate{
-                KurtsFileTools.ExifToolWrapper(p);
+                PhotoTools.ExifToolWrapper(p);
             });
         
         Assert.That(e!.ExceptionId,Is.EqualTo(ExifToolExceptionId.PathToExifToolExeNotFound));
@@ -43,7 +52,7 @@ public class Testing_ExifToolWrapper{
 
         ExifToolWrapperException? e = Assert.Throws<ExifToolWrapperException>(
             delegate{
-                KurtsFileTools.ExifToolWrapper(p);
+                PhotoTools.ExifToolWrapper(p);
             });
         
         Assert.That(e!.ExceptionId,Is.EqualTo(ExifToolExceptionId.FileArrayIsNull));
@@ -55,7 +64,7 @@ public class Testing_ExifToolWrapper{
 
         ExifToolWrapperException? e = Assert.Throws<ExifToolWrapperException>(
             delegate{
-                KurtsFileTools.ExifToolWrapper(p);
+                PhotoTools.ExifToolWrapper(p);
             });
         
         Assert.That(e!.ExceptionId,Is.EqualTo(ExifToolExceptionId.FileArrayIsEmpty));
@@ -63,38 +72,36 @@ public class Testing_ExifToolWrapper{
 
     [Test]
     public void testing_on_cr3(){
-        string file = TestContext.CurrentContext.TestDirectory +
-                      @"\Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1833.CR3";
+        string file = _pathToTestDataForTestingExifWrapper + @"/cr3 files/7P2A1833.CR3";
         
         Assume.That(file, Does.Exist);
         
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file } };
         
-        (XmlDocument xmlDocument, string? messageFromExitTool)  = KurtsFileTools.ExifToolWrapper(p);
+        (XmlDocument xmlDocument, string? messageFromExitTool)  = PhotoTools.ExifToolWrapper(p);
         
-        Assert.That(messageFromExitTool, Is.Null, $"{nameof(messageFromExitTool)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(messageFromExitTool, Is.Null, $"{nameof(messageFromExitTool)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
 
         XmlElement? root = xmlDocument.DocumentElement;
         
-        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
     }
 
     [Test]
     public void testing_on_non_image_file(){
-        string file = TestContext.CurrentContext.TestDirectory +
-                      @"\Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\NonImageFile.txt";
+        string file = _pathToTestDataForTestingExifWrapper + @"\NonImageFile.txt";
         
         Assume.That(file, Does.Exist);
         
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file } };
         
-        (XmlDocument xmlDocument, string? messageFromExitTool)  = KurtsFileTools.ExifToolWrapper(p);
+        (XmlDocument xmlDocument, string? messageFromExitTool)  = PhotoTools.ExifToolWrapper(p);
 
-        Assert.That(messageFromExitTool, Is.Null, $"{nameof(messageFromExitTool)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(messageFromExitTool, Is.Null, $"{nameof(messageFromExitTool)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
 
         XmlElement? root = xmlDocument.DocumentElement;
         
-        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
     }
 
     [Test]
@@ -105,7 +112,7 @@ public class Testing_ExifToolWrapper{
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file } };
         ExifToolWrapperException? e = Assert.Throws<ExifToolWrapperException>(
             delegate{
-                KurtsFileTools.ExifToolWrapper(p);
+                PhotoTools.ExifToolWrapper(p);
             });
         
         Assert.That(e!.ExceptionId,Is.EqualTo(ExifToolExceptionId.ExifToolDidNotReturnAnyOutput));
@@ -113,67 +120,67 @@ public class Testing_ExifToolWrapper{
 
     [Test]
     public void testing_on_directory(){
-        string file = TestContext.CurrentContext.TestDirectory +
-                      @"\Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper";
+        string file = _pathToTestDataForTestingExifWrapper;
+        
         Assume.That(file, Does.Exist);
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file } };
-        (XmlDocument xmlDocument, string? messageFromExitTool) = KurtsFileTools.ExifToolWrapper(p);
+        (XmlDocument xmlDocument, string? messageFromExitTool) = PhotoTools.ExifToolWrapper(p);
 
         Assert.That(messageFromExitTool, Is.EqualTo("1 directories scanned 16 image files read"),
             "result.MsgFormExifTool");
 
         XmlElement? root = xmlDocument.DocumentElement;
         
-        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
     }
 
     [Test]
     public void testing_on_directory_with_backslash(){
-        string file = TestContext.CurrentContext.TestDirectory +
-                      @"\Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\";
+        string file = _pathToTestDataForTestingExifWrapper + @"/";
+        
         Assume.That(file, Does.Exist);
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file } };
-        (XmlDocument xmlDocument, string? messageFromExitTool) = KurtsFileTools.ExifToolWrapper(p);
+        (XmlDocument xmlDocument, string? messageFromExitTool) = PhotoTools.ExifToolWrapper(p);
 
         Assert.That(messageFromExitTool, Is.EqualTo("1 directories scanned 16 image files read"),
             "result.MsgFormExifTool");
 
         XmlElement? root = xmlDocument.DocumentElement;
         
-        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
     }
 
     [Test]
     public void testing_on_directory_recursive(){
-        string file = TestContext.CurrentContext.TestDirectory +
-                      @"\Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper";
+        string file = _pathToTestDataForTestingExifWrapper;
+        
         Assume.That(file, Does.Exist);
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file }, Options = "-r" };
 
-        (XmlDocument xmlDocument, string? messageFromExitTool) = KurtsFileTools.ExifToolWrapper(p);
+        (XmlDocument xmlDocument, string? messageFromExitTool) = PhotoTools.ExifToolWrapper(p);
 
         Assert.That(messageFromExitTool, Is.EqualTo("3 directories scanned 29 image files read"),
             "result.MsgFormExifTool");
 
         XmlElement? root = xmlDocument.DocumentElement;
         
-        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
 
     }
 
     [Test]
     public void testing_on_directory_with_backslash_recursive(){
-        string file = TestContext.CurrentContext.TestDirectory +
-                      @"\Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\";
+        string file = _pathToTestDataForTestingExifWrapper + @"/";
+        
         Assume.That(file, Does.Exist);
         ExifToolWrapperParameters p = new(){ PathToExifToolExe = ExifToolExe, Files = new[]{ file }, Options = "-r" };
-        (XmlDocument xmlDocument, string? messageFromExitTool) = KurtsFileTools.ExifToolWrapper(p);
+        (XmlDocument xmlDocument, string? messageFromExitTool) = PhotoTools.ExifToolWrapper(p);
 
         Assert.That(messageFromExitTool, Is.EqualTo("3 directories scanned 29 image files read"),
             "result.MsgFormExifTool");
 
         XmlElement? root = xmlDocument.DocumentElement;
         
-        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(KurtsFileTools)}.{nameof(KurtsFileTools.ExifToolWrapper)}()");
+        Assert.That(root,Is.Not.Null,$"DocumentElement in {nameof(xmlDocument)} after running {nameof(PhotoTools)}.{nameof(PhotoTools.ExifToolWrapper)}()");
     }
 }

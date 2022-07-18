@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-using KurtsToolsLibrary.KurtsFileTools;
+using KurtsToolsLibrary.FileTools;
 using KurtsToolsLibrary.XmlTools;
 using NUnit.Framework;
 
@@ -38,18 +38,18 @@ public class Testing_BuildDirectoryStructure{
 
     [SetUp]
     public void SetUp(){
-        _tempDir = KurtsFileTools.NewTempDirectory();
+        _tempDir = FileTools.NewTempDirectory();
     }
 
     [TearDown]
     public void TearDown(){
-        KurtsFileTools.DeleteDirectory(_tempDir);
+        FileTools.DeleteDirectory(_tempDir);
     }
 
 
     [Test]
     public void Testing_Content_In_File(){
-        KurtsFileTools.BuildDirectoryStructure(_tempDir, _fileStructure);
+        FileTools.BuildDirectoryStructure(_tempDir, _fileStructure);
 
         DirectoryInfo di = new(_tempDir);
 

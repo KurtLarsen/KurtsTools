@@ -5,10 +5,35 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Description>Include CmdLineTokenizer, FileMetadataSnapshot, KurtsFileTools, BracketingFilesOrganizer, KurtsExifToolWrapper</Description>
-        <PackageVersion>1.0.1</PackageVersion>
-        <Title>Kurts Tools Library</Title>
+        <Description>KurtsTools
+CmdLineTokenizer
+Classes
+CmdLineTokenizer
+FileTools
+Functions
+DirectoryStructureIsEqual
+GetMd5Hash
+GetMetaDataDifFlags
+record MetaData
+Methods
+CopyDirectory
+NewTempDirectory
+DeleteDirectory
+BuildDirectoryStructure
+PhotoTools
+Functions
+ExifToolWrapper
+methods
+MoveStackPhotosToSubDirectories
+XmlTools
+Functions
+StringToXmlDocument</Description>
+        <PackageVersion>0.0.1</PackageVersion>
+        <Title>Kurts Tools</Title>
         <Copyright>Kurt Larsen</Copyright>
+        <PackageId>KurtsTools</PackageId>
+        <Authors>Kurt Larsen</Authors>
+        <RepositoryUrl>https://github.com/KurtLarsen/KurtsTools</RepositoryUrl>
     </PropertyGroup>
 
 </Project>
