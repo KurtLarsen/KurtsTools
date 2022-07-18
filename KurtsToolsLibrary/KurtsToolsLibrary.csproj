@@ -28,7 +28,7 @@ MoveStackPhotosToSubDirectories
 XmlTools
 Functions
 StringToXmlDocument</Description>
-        <PackageVersion>0.0.1</PackageVersion>
+        <PackageVersion>0.0.2</PackageVersion>
         <Title>Kurts Tools</Title>
         <Copyright>Kurt Larsen</Copyright>
         <PackageId>KurtsTools</PackageId>

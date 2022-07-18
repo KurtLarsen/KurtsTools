@@ -3,7 +3,7 @@ If you just want to try out this tool, you can download it as a nuget package fr
 ## CmdLineTokenizer
 ### Classes
 * CmdLineTokenizer
-# DirectoryTools
+## DirectoryTools
 ### Functions
 * DirectoryStructureIsEqual
 ### Methods
