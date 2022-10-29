@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Description>Directory Tools
+    NewTempDirectory
+    DeleteDirectory
+    DirectoryStructureIsEqual
+    DirectoryIsEqualRecursive
+    CopyDirectory
+    BuildDirectoryStructure
+
+File Tools
+    GetMd5Hash
+    GetConfig
+
+Photo Tools
+
+    (to be done)
+
+String extensions
+
+    FirstWord
+    SecondWord
+    FirstWordAndRest
+    SecondWordAndRest
+    TrimFirstWord
+
+Windows
+
+    IsAdministrator
+    GetServiceControllerByNameOrDisplayName
+    StopAndDeleteService
+    CmdRun
+    ArgumentHandler
+</Description>
+        <PackageVersion>0.0.5</PackageVersion>
+        <Title>Kurts Tools Library</Title>
+        <Copyright>Kurt Larsen</Copyright>
+        <PackageId>KurtsTools</PackageId>
+        <Authors>Kurt Larsen</Authors>
+        <RepositoryUrl>https://github.com/KurtLarsen/KurtsToolsLibrary</RepositoryUrl>
+        <RootNamespace>NSKurtsTools</RootNamespace>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <Version>0.0.3</Version>
+        <PackageProjectUrl>https://github.com/KurtLarsen/KurtsToolsLibrary</PackageProjectUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="xbin\**" />
+      <Compile Remove="xobj\**" />
+      <EmbeddedResource Remove="xbin\**" />
+      <EmbeddedResource Remove="xobj\**" />
+      <None Remove="xbin\**" />
+      <None Remove="xobj\**" />
+      <None Remove="nuget.config" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Core.System.ServiceProcess" Version="2.0.1" />
+    </ItemGroup>
+
+</Project>
