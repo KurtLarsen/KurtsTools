@@ -4,21 +4,30 @@ using System.Text;
 namespace NSKurtsTools;
 
 public static partial class KurtsTools{
-    
-    
+    public static CmdRunResult CmdRun(string command, string? arguments = null){
+        CmdRunSetUp setup = new(){ Command = command };
+        if (arguments != null) setup.Arguments = arguments;
+        return CmdRun(setup);
+    }
+
+
     /*
      * https://stackoverflow.com/questions/139593/processstartinfo-hanging-on-waitforexit-why
      */
-    public static CmdRunResult CmdRun(string command, string? arguments = null, int timeoutMilliSec = 10 * 1000){ // default timeout = 10 sec 
-        using Process process = new(){
-            StartInfo = new ProcessStartInfo{
-                FileName = command,
-                Arguments = arguments,
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-            },
+    public static CmdRunResult CmdRun(CmdRunSetUp cmdRunSetUp){
+
+        cmdRunSetUp.WorkingDirectory ??= Directory.GetCurrentDirectory();
+        
+        ProcessStartInfo startInfo = new(){
+            FileName = $"\"{cmdRunSetUp.Command}\"",
+            Arguments = cmdRunSetUp.Arguments,
+            WorkingDirectory = cmdRunSetUp.WorkingDirectory,
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
         };
+
+        using Process process = new(){ StartInfo = startInfo };
 
         StringBuilder outputStringBuilder = new();
         StringBuilder errorStringBuilder = new();
@@ -28,7 +37,7 @@ public static partial class KurtsTools{
         process.OutputDataReceived += (_, e) => {
             if (e.Data == null){
                 // ReSharper disable once AccessToDisposedClosure
-                outputWaitHandle.Set();
+                outputWaitHandle.Set(); // Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
             }
             else{
                 outputStringBuilder.AppendLine(e.Data);
@@ -37,7 +46,7 @@ public static partial class KurtsTools{
         process.ErrorDataReceived += (_, e) => {
             if (e.Data == null){
                 // ReSharper disable once AccessToDisposedClosure
-                errorWaitHandle.Set();
+                errorWaitHandle.Set();  // Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
             }
             else{
                 errorStringBuilder.AppendLine(e.Data);
@@ -50,14 +59,15 @@ public static partial class KurtsTools{
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
 
-            if (process.WaitForExit(timeoutMilliSec) && outputWaitHandle.WaitOne(timeoutMilliSec) &&
-                errorWaitHandle.WaitOne(timeoutMilliSec)){
-                return new CmdRunResult(command, arguments, process.ExitCode, outputStringBuilder.ToString(),
+            if (process.WaitForExit(cmdRunSetUp.TimeOutMilliSec) &&
+                outputWaitHandle.WaitOne(cmdRunSetUp.TimeOutMilliSec) &&
+                errorWaitHandle.WaitOne(cmdRunSetUp.TimeOutMilliSec)){
+                return new CmdRunResult(cmdRunSetUp, process.ExitCode, outputStringBuilder.ToString(),
                     errorStringBuilder.ToString());
             }
 
             if (!process.HasExited) process.Kill();
-            return new CmdRunResult(command, arguments, CmdRunResult.ExitCodeTimeOut, "", "process timed out");
+            return new CmdRunResult(cmdRunSetUp, CmdRunResult.ExitCodeTimeOut, "", "process timed out");
         } catch (Exception e){
             try{
                 process.Kill();
@@ -65,7 +75,7 @@ public static partial class KurtsTools{
                 // ignore
             }
 
-            return new CmdRunResult(command, arguments, CmdRunResult.ExitCodeFatalError, "", e.Message);
+            return new CmdRunResult(cmdRunSetUp, CmdRunResult.ExitCodeFatalError, "", e.Message);
         }
     }
 }

@@ -76,19 +76,19 @@ public class Testing_BuildDirectoryStructure{
         s = File.ReadAllText(files[3].FullName);
         Assert.That(s, Is.EqualTo(File.ReadAllText(_pathToContentGivenAsSource)));
 
-        DirectoryInfo[] subdirs = di.GetDirectories();
+        DirectoryInfo[] subDirectories = di.GetDirectories();
 
-        Assert.That(subdirs.Length, Is.EqualTo(2));
-        Assert.That(subdirs[0].Name, Is.EqualTo("subdir1"));
-        Assert.That(subdirs[1].Name, Is.EqualTo("subdir2"));
+        Assert.That(subDirectories.Length, Is.EqualTo(2));
+        Assert.That(subDirectories[0].Name, Is.EqualTo("subdir1"));
+        Assert.That(subDirectories[1].Name, Is.EqualTo("subdir2"));
 
-        FileInfo[] filesInSubdir1 = subdirs[0].GetFiles();
+        FileInfo[] filesInSubdir1 = subDirectories[0].GetFiles();
 
         Assert.That(filesInSubdir1.Length, Is.EqualTo(2));
         Assert.That(filesInSubdir1[0].Name, Is.EqualTo("file1.txt"));
         Assert.That(filesInSubdir1[1].Name, Is.EqualTo("file2.txt"));
 
-        FileInfo[] filesInSubdir2 = subdirs[1].GetFiles();
+        FileInfo[] filesInSubdir2 = subDirectories[1].GetFiles();
 
         Assert.That(filesInSubdir2.Length, Is.EqualTo(0));
     }

@@ -20,212 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Testing File Tools\TestData\directory1\file2.txt" />
-      <None Remove="Testing File Tools\TestData\file4.txt" />
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 files\7P2A1833.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 files\7P2A1834.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 files\7P2A1835.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 files\7P2A1836.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 files\7P2A1837.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 files\7P2A1838.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1833.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1834.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1835.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1836.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1837.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\jpg files\7P2A1838.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\7P2A1833.CR3.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\7p2a1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\a.cr3.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\allMetadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 file from Canon R5.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl All Metadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl Copyright Only.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, remove metadata via exiftool.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3, alle egenskaber fjernet af windows 10.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\cr3, remove metadata via exiftool.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\exif.xml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\image file from internet.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\noMetadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\NonImageFile.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\timestamp.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing ExifToolWrapper\zero-length-file.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-34.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-52.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-17-70.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-77.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-85.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-45-92.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing MoveStackPhotosToSubDirectories\timestamp_2022-05-28_13-57-47-94.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\TestData for Testing buildDirectoryStructure\fileWithContent.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1833.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1834.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1835.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1836.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1837.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\jpg files\7P2A1838.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\7P2A1833.CR3.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\7p2a1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\a.cr3.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\allMetadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 file from Canon R5.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl All Metadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, incl Copyright Only.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 to jpg via LR, remove metadata via exiftool.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3, alle egenskaber fjernet af windows 10.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3, remove metadata via exiftool.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\exif.xml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\image file from internet.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\noMetadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\NonImageFile.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\timestamp.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\zero-length-file.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1833.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1834.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1835.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1836.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1837.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing File Tools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1838.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
       <None Update="Testing PhotoTools\Testing ExifToolWrapper\TestData for Testing ExifToolWrapper\cr3 files\7P2A1833.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
@@ -359,15 +153,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\jpg files\7P2A1838.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\7P2A1833.CR3.exif">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\7p2a1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\a.cr3.exif">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Testing PhotoTools\Testing GetExif\TestData for Testing GetExif\allMetadata.jpg">
@@ -526,8 +311,194 @@
       <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-47-94.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="Testing PhotoTools\TestData\7P2A1833.CR3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\7p2a1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\a.cr3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\jpg files\7P2A1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\zero-length-file.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\exif.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\NonImageFile.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftoolexe\exiftool_v11.64.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftoolexe\exiftool_v11.86.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftoolexe\exiftool_v12.40.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftoolexe\exiftool_v12.49.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\httpd.exe\httpd_v2.4.46.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\ab.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\abs.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\ApacheMonitor.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_crypto_openssl-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_dbd_mysql-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_dbd_odbc-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_dbd_sqlite3-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_ldap-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\brotli.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\dbmmanage.pl">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htcacheclean.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htdbm.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htdigest.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htpasswd.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httpd.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httpd.exe -k stop">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httpd.exe -k uninstall">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httxt2dbm.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libapr-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libapriconv-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libaprutil-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libbrotli.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libcrypto-1_1-x64.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libcurl.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libhttpd.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libssl-1_1-x64.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libxml2.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\logresolve.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\lua52.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\nghttp2.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\openssl.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\pcre.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\rotatelogs.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\sqlite3.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\sqlite3.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\verifybins.bat">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\wintty.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\zlib1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftool.exe\exiftool_v11.64.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftool.exe\exiftool_v11.86.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftool.exe\exiftool_v12.40.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\exiftool.exe\exiftool_v12.49.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Remove="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\include\**" />
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\conf\httpd.conf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <!--
+      <None Update="Testing PhotoTools\TestData\empty directory">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      -->
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Testing PhotoTools\exiftool.exe" />
+      <Folder Include="Testing PhotoTools\TestData\empty directory" />
+      <Folder Include="Testing WindowsService\httpd.exe" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\include\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\include\**" />
+    </ItemGroup>
+
+    <!--
     <ItemGroup>
       <None Update="Testing PhotoTools\Testing Bracketing Files Organizer\TestData\7P2A2704.CR3.CR3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -557,5 +528,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
+    -->
 
 </Project>
