@@ -55,8 +55,12 @@ public static partial class KurtsTools{
 
         public override string ToString(){
 
-            return $"\x1b[36m.{nameof(ExitCode)}\x1b[0m was <{ExitCode}> when running command line:\n" +
-                   $"{Commandline}\n" +
+            return $"\x1b[36m.{nameof(CmdRunSetUp)}.{nameof(CmdRunSetUp.Command)}\x1b[0m:\n"+
+                   $"{CmdRunSetUp.Command}\n"+
+                   $"\x1b[36m.{nameof(CmdRunSetUp)}.{nameof(CmdRunSetUp.Arguments)}\x1b[0m:\n"+
+                   $"{CmdRunSetUp.Arguments}\n"+
+                   $"\x1b[36m.{nameof(ExitCode)}\x1b[0m:\n" +
+                   $"{ExitCode}\n" +
                    $"\x1b[36m.{nameof(WorkingDirectory)}\x1b[0m:\n" +
                    $"{WorkingDirectory}\n" +
                    $"\x1b[36m.{nameof(ErrOut)}\x1b[0m:\n" +
