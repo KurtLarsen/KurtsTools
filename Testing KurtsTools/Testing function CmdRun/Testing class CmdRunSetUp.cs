@@ -31,5 +31,34 @@ public class Testing_Class_CmdRunSetUp{
         Assert.That(result.StdOut,Does.Contain(expectedText),result.StdOut);
         
     }
+
+    [Test]
+    public void Testing_fn_ToString(){
+        const string theCommand = "The Command";
+        const string theArguments = "The Arguments";
+        const string theWorkingDirectory = "The WorkingDirectory";
+        const int theTimeOutValue = 123;
+        
+
+        CmdRunSetUp x = new(){
+            Command = theCommand, 
+            Arguments = theArguments, 
+            WorkingDirectory = theWorkingDirectory,
+            TimeOutMilliSec = theTimeOutValue,
+        };
+
+        string[] a = x.ToString().Split('\n');
+        
+        Assert.That(a.Length,Is.EqualTo(8));
+
+        Assert.That(a[0],Does.Match(@"^\x1b\[\d+mCommand\x1b\[\d+m:$"));
+        Assert.That(a[1],Is.EqualTo(theCommand));
+        Assert.That(a[2],Does.Match(@"^\x1b\[\d+mArguments\x1b\[\d+m:$"));
+        Assert.That(a[3],Is.EqualTo(theArguments));
+        Assert.That(a[4],Does.Match(@"^\x1b\[\d+mWorkingDirectory\x1b\[\d+m:$"));
+        Assert.That(a[5],Is.EqualTo(theWorkingDirectory));
+        Assert.That(a[6],Does.Match(@"^\x1b\[\d+mTimeOutMilliSec\x1b\[\d+m:$"));
+        Assert.That(a[7],Is.EqualTo(theTimeOutValue.ToString()));
+    }
     
 }
