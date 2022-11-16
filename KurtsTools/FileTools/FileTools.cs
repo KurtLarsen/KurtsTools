@@ -15,5 +15,42 @@ public static partial class KurtsTools{
         return md5.ComputeHash(inputStream);
     }
 
+    /**
+     * <summary>Return an unused file name in the Windows TMP directory</summary>
+     * <returns>Full path file name</returns>
+     * <example><code>string newFileName=NewFileName()+".txt"</code></example>
+     */
+    private static string NewFileName(){
+        return NewFileName(Path.GetTempPath());
+    }
+
+    /**
+     * <summary>Return an unused file name in the given directory</summary>
+     * <returns>Full path file name</returns>
+     * <param name="directoryName">Path to directory</param>
+     * <exception cref="DirectoryNotFoundException">If directory is not found</exception>
+     */
+    private static string NewFileName(string directoryName){
+        if (!Directory.Exists(directoryName)) throw new DirectoryNotFoundException(directoryName);
+        if (!directoryName.EndsWith(Path.DirectorySeparatorChar)) directoryName += Path.DirectorySeparatorChar;
+        string newFileName;
+        do{
+            newFileName = directoryName + Guid.NewGuid();
+        } while (File.Exists(newFileName));
+
+        return newFileName;
+    }
+    
+    /**
+     * <summary>Return an unused file name in the given directory</summary>
+     * <returns>Full path file name</returns>
+     * <param name="directoryInfo">The directory of the new file name</param>
+     * <exception cref="DirectoryNotFoundException">If directory is not found</exception>
+     */
+    // ReSharper disable once SuggestBaseTypeForParameter
+    private static string NewFileName(DirectoryInfo directoryInfo){
+        return NewFileName(directoryInfo.FullName);
+    }
+
 
 }

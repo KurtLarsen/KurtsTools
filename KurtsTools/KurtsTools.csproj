@@ -28,14 +28,15 @@ Windows
 - StopAndDeleteService
 - CmdRun
 - ArgumentHandler</Description>
-        <PackageVersion>0.0.8</PackageVersion>
+        <PackageVersion>0.0.9</PackageVersion>
         <Title>Kurts Tools Library</Title>
         <Copyright>Kurt Larsen</Copyright>
         <PackageId>KurtsTools</PackageId>
         <Authors>Kurt Larsen</Authors>
         <RepositoryUrl>https://github.com/KurtLarsen/KurtsTools</RepositoryUrl>
         <RootNamespace>NSKurtsTools</RootNamespace>
-        <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageReleaseNotes>override CmdRunSetUp.ToString()
+override CmdRunResult.ToString()</PackageReleaseNotes>
         <Version>0.0.3</Version>
         <PackageProjectUrl>https://github.com/KurtLarsen/KurtsTools</PackageProjectUrl>
         <PackageTags>tools windows c#</PackageTags>
