@@ -53,7 +53,7 @@ public class Testing_Class_ExitToolWrapper{
             new ExpectedResult{
                 ExifToolExitCode = 1,
                 ConvertingToXmlException = new System.Xml.XmlException("Root element is missing."),
-                ExpectedExifFromMultipleFiles = new ExpectedExifFromSingleFile[]{},
+                ExpectedExifFromMultipleFiles = Array.Empty<ExpectedExifFromSingleFile>(),
                 ExifToolStdOutStartsWith = string.Empty,
                 ExifToolErrOutStartsWith = "    1 directories scanned\r\n    0 image files read\r\n",
             }
@@ -69,7 +69,7 @@ public class Testing_Class_ExitToolWrapper{
             new ExpectedResult{
                 ExifToolExitCode = 0,
                 ConvertingToXmlException = new System.Xml.XmlException("Root element is missing."),
-                ExpectedExifFromMultipleFiles = new ExpectedExifFromSingleFile[]{},
+                ExpectedExifFromMultipleFiles = Array.Empty<ExpectedExifFromSingleFile>(),
                 ExifToolStdOutStartsWith = string.Empty,
                 ExifToolErrOutStartsWith = "    1 directories scanned\r\n    0 image files read\r\n",
             }
@@ -84,7 +84,7 @@ public class Testing_Class_ExitToolWrapper{
             new ExpectedResult{
                 ExifToolExitCode = 0,
                 ConvertingToXmlException = new System.Xml.XmlException("Root element is missing."),
-                ExpectedExifFromMultipleFiles = new ExpectedExifFromSingleFile[]{},
+                ExpectedExifFromMultipleFiles = Array.Empty<ExpectedExifFromSingleFile>(),
                 ExifToolStdOutStartsWith = string.Empty,
                 ExifToolErrOutStartsWith = "    1 directories scanned\r\n    0 image files read\r\n",
             }
@@ -327,7 +327,7 @@ public class Testing_Class_ExitToolWrapper{
 
 public record ExpectedExifFromSingleFile{
     public int ExifItemCount;
-    public ExifItem[] SomeOfTheExifItems={};
+    public ExifItem[] SomeOfTheExifItems= Array.Empty<ExifItem>();
 }
 
 public record TestInput{

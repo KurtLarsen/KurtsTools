@@ -7,9 +7,9 @@ public record CmdRunSetUp{
     public int TimeOutMilliSec = 1000; // 1 second
 
    public override string ToString(){
-       return $"\x1b[36m{nameof(CmdRunSetUp.Command)}\x1b[0m:\n" +
+       return $"\x1b[36m{nameof(Command)}\x1b[0m:\n" +
               $"{Command}\n" +
-              $"\x1b[36m{nameof(CmdRunSetUp.Arguments)}\x1b[0m:\n" +
+              $"\x1b[36m{nameof(Arguments)}\x1b[0m:\n" +
               $"{Arguments}\n" +
               $"\x1b[36m{nameof(WorkingDirectory)}\x1b[0m:\n" +
               $"{WorkingDirectory}\n" +

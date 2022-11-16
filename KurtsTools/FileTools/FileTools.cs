@@ -20,7 +20,7 @@ public static partial class KurtsTools{
      * <returns>Full path file name</returns>
      * <example><code>string newFileName=NewFileName()+".txt"</code></example>
      */
-    private static string NewFileName(){
+    public static string NewFileName(){
         return NewFileName(Path.GetTempPath());
     }
 
@@ -30,7 +30,7 @@ public static partial class KurtsTools{
      * <param name="directoryName">Path to directory</param>
      * <exception cref="DirectoryNotFoundException">If directory is not found</exception>
      */
-    private static string NewFileName(string directoryName){
+    public static string NewFileName(string directoryName){
         if (!Directory.Exists(directoryName)) throw new DirectoryNotFoundException(directoryName);
         if (!directoryName.EndsWith(Path.DirectorySeparatorChar)) directoryName += Path.DirectorySeparatorChar;
         string newFileName;
@@ -48,7 +48,7 @@ public static partial class KurtsTools{
      * <exception cref="DirectoryNotFoundException">If directory is not found</exception>
      */
     // ReSharper disable once SuggestBaseTypeForParameter
-    private static string NewFileName(DirectoryInfo directoryInfo){
+    public static string NewFileName(DirectoryInfo directoryInfo){
         return NewFileName(directoryInfo.FullName);
     }
 

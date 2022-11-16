@@ -47,15 +47,11 @@ public static partial class KurtsTools{
             }
         }
 
-        // ReSharper disable once ArrangeAccessorOwnerBody
-        public string WorkingDirectory{
-            get{ return CmdRunSetUp.WorkingDirectory!; }
-        }
 
 
         public override string ToString(){
 
-            return CmdRunSetUp.ToString()+"\n"+
+            return CmdRunSetUp+"\n"+
                    $"\x1b[36m{nameof(ExitCode)}\x1b[0m:\n" +
                    $"{ExitCode}\n" +
                    $"\x1b[36m{nameof(ErrOut)}\x1b[0m:\n" +
