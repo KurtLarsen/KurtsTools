@@ -477,6 +477,9 @@
       <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\conf\httpd.conf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\conf\minimal.conf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <!--
       <None Update="Testing PhotoTools\TestData\empty directory">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

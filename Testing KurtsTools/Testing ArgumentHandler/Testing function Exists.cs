@@ -28,14 +28,14 @@ public class TestingFunctionExists{
 
     [Test]
     public void function_Exists_return_true_when__argument_exists(){
-        bool result = _cmdArgumentHandler.ArgumentExists(ConfigKey);
+        bool result = _cmdArgumentHandler.ArgumentKeyExists(ConfigKey);
         
         Assert.That(result,Is.True);
     }
     
     [Test]
     public void function_Exists_return_false_when__argument_does_not_exist(){
-        bool result = _cmdArgumentHandler.ArgumentExists("xxx");
+        bool result = _cmdArgumentHandler.ArgumentKeyExists("xxx");
         
         Assert.That(result,Is.False);
     }

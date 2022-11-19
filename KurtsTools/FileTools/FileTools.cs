@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+// ReSharper disable ConvertToAutoPropertyWhenPossible
 
 namespace NSKurtsTools;
 
@@ -53,4 +54,27 @@ public static partial class KurtsTools{
     }
 
 
+    /**
+     * <summary>Return a unique filename for the directory</summary>
+     * <param name="filePathWithPlaceholder">Filename containing placeholder "{0}"</param>
+     * <param name="indexStart">Start value to be inserted into placeholder</param>
+     * <returns>Unique filename</returns>
+     * <example><code>string s=UniqueFileName("myfile{0}.txt")</code></example>
+     */
+    public static string UniqueFileName(string filePathWithPlaceholder,int indexStart = 2){
+        string dir = filePathWithPlaceholder.Directory();
+        if (string.Format(dir, 1) != dir) throw new ArgumentException("Placeholder in directory not allowed");
+        string filename = filePathWithPlaceholder.FileName();
+        if (string.Format(filename, 1) == filename){
+            filePathWithPlaceholder = dir + filePathWithPlaceholder.FileBaseName() + "{0}" +
+                                      filePathWithPlaceholder.FileExtension();
+        }
+
+        string result;
+        do{
+            result = string.Format(filePathWithPlaceholder, indexStart++);
+        } while (File.Exists(result));
+
+        return result;
+    }
 }

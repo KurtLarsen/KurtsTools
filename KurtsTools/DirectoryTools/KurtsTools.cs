@@ -6,8 +6,8 @@ namespace NSKurtsTools;
 
 public static partial class KurtsTools{
     /**
-      <para>Creates a new empty directory in the system temp path and returns the full path to it. The Path ends with a DirectorySeparatorChar</para>
-       <returns>String with full path to newly created directory</returns>
+     * <summary>Creates a new empty directory in the system temp path and returns the full path to it. The Path ends with a DirectorySeparatorChar</summary>
+     * <returns>Full path to newly created directory</returns>
      */
     [SupportedOSPlatform("windows")]
     public static string NewTempDirectory(){
@@ -28,7 +28,8 @@ public static partial class KurtsTools{
             enumerateFile.Delete();
         }
 
-        foreach (DirectoryInfo enumerateDirectory in directoryInfo.EnumerateDirectories()) DeleteDirectory(enumerateDirectory.FullName);
+        foreach (DirectoryInfo enumerateDirectory in directoryInfo.EnumerateDirectories())
+            DeleteDirectory(enumerateDirectory.FullName);
         directoryInfo.Delete();
     }
 
@@ -166,10 +167,10 @@ public static partial class KurtsTools{
     public static void BuildDirectoryStructure(string destinationDirectory, XmlDocument fileStructure){
         BuildDirectoryStructure(destinationDirectory, fileStructure.DocumentElement!);
     }
-    
+
     private const string NameOfContentAttribute = "content";
     private const string NameOfSourceAttribute = "source";
-    
+
     [SuppressMessage("ReSharper", "InvertIf")]
     private static string GetContentToBePutInFile(XmlElement xmlElement){
         if (xmlElement.HasAttribute(NameOfContentAttribute))
@@ -178,11 +179,11 @@ public static partial class KurtsTools{
             string path = xmlElement.GetAttribute(NameOfSourceAttribute);
             return File.ReadAllText(path);
         }
+
         return xmlElement.InnerText;
     }
 
     // public static void BuildDirectoryStructure(string destinationDirectory, XmlDocument fileStructureDocument){
     //     throw new NotImplementedException();
     // }
-
 }

@@ -1,5 +1,8 @@
 ﻿namespace NSKurtsTools;
 
+/// <summary>
+/// Class for handling command line arguments
+/// </summary>
 public class CmdArgumentHandler{
     private readonly string[] _arguments;
 
@@ -44,16 +47,33 @@ public class CmdArgumentHandler{
     }
 
 
-    // ReSharper disable once MemberCanBePrivate.Global
-    public bool ArgumentExists( params string[] argumentToFind){
-        return GetArgumentItem( argumentToFind).Key != "";
+    /// <summary>
+    /// Look for one or more arguments keys in the given argument string
+    /// </summary>
+    /// <param name="keyToFind">One or more argument keys to look for inclusive the leading argument id string</param>
+    /// <returns>True if the argument key exists otherwise False</returns>
+    /// <example><code>
+    /// CmdArgumentHandler cmdArgumentHandler = new CmdArgumentHandler(args);
+    /// bool hasHelpKey = cmdArgumentHandler.ArgumentExists("-?","-help","/?","/help");
+    /// </code></example>
+    [Obsolete($"Use {nameof(ArgumentKeyExists)}",true)]
+    // ReSharper disable once UnusedMember.Global
+    public bool ArgumentExists( params string[] keyToFind){
+        return GetArgumentItem( keyToFind).Key != "";
     }
+    
+    /// <summary>
+    /// Look for one or more arguments keys in the given argument string
+    /// </summary>
+    /// <param name="keyToFind">One or more argument keys to look for inclusive the leading argument id string</param>
+    /// <returns>True if the argument key exists otherwise False</returns>
+    /// <example><code>
+    /// CmdArgumentHandler cmdArgumentHandler = new CmdArgumentHandler(args);
+    /// bool hasHelpKey = cmdArgumentHandler.ArgumentKeyExists("-?","-help","/?","/help");
+    /// </code></example>
+    public bool ArgumentKeyExists( params string[] keyToFind){
+        return GetArgumentItem( keyToFind).Key != "";
+    }
+
 }
 
-public static class Extensions{
-    public static T[] SubArray<T>(this T[] array, int offset, int length){
-        T[] result = new T[length];
-        Array.Copy(array, offset, result, 0, length);
-        return result;
-    }
-}
