@@ -7,6 +7,7 @@ public class CmdArgumentHandler{
     private readonly string[] _arguments;
 
     /**
+     * <summary>Constructor</summary>
      * <param name="arguments">An array of string, as given to a console program</param>
      * <example><code>x=new CmdArgumentHandler(args);</code></example>
      */
@@ -17,19 +18,24 @@ public class CmdArgumentHandler{
 
     /**
      * <param name="argumentToFind">The argument to find. Multiple versions of the same argument can be given</param>
-     * <example><code>&#47;&#47; setup an array of string arguments
-     * string[] args = new []{"/s","/f","abc.txt","/config","c.config"}<br/>
+     * <example><code>
+     * &#47;&#47;
+     * &#47;&#47; A program was started at the command line with some additional arguments:
+     * &#47;&#47;
+     * &#47;&#47;     myProgram.exe /s /f abc.txt /config c.config
+     * &#47;&#47;
      * <para> </para>
-     * &#47;&#47; create new CmdArgumentHandler
      * var cmdArgumentHandler = new CmdArgumentHandler(args);
      * <para> </para>
-     * &#47;&#47; get item starting with "/f" or "/file"
      * var result = cmdArgumentHandler.GetArgumentItem("/f","/file");
      * <para> </para>
-     * &#47;&#47; result.Key is now "/f"
-     * &#47;&#47; result.SubParams is now {"abc.txt"}
+     * &#47;&#47;
+     * &#47;&#47; result.Key       = "/f"
+     * &#47;&#47; result.SubParams = {"abc.txt"}
+     * &#47;&#47;
      * </code>
      * </example>
+     * <returns><see cref="CmdArgumentItem"/></returns>
      */
     public CmdArgumentItem GetArgumentItem(params string[] argumentToFind){
         char switchId = argumentToFind[0][0];

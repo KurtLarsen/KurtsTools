@@ -16,7 +16,12 @@ public static partial class KurtsTools{
                    .Name + Path.DirectorySeparatorChar;
     }
 
-    public static void DeleteDirectory(string pathToDirectory){
+    /**
+     * <summary>Delete directory</summary>
+     * <param name="pathToDirectory"><para>Path to directory to be deleted.</para>Can be null</param>
+     */
+    public static void DeleteDirectory(string? pathToDirectory){
+        if(pathToDirectory==null) return;
         DirectoryInfo directoryInfo = new(pathToDirectory);
         if (!directoryInfo.Exists)
             return;
@@ -29,7 +34,7 @@ public static partial class KurtsTools{
         }
 
         foreach (DirectoryInfo enumerateDirectory in directoryInfo.EnumerateDirectories())
-            DeleteDirectory(enumerateDirectory.FullName);
+            DeleteDirectory(pathToDirectory: enumerateDirectory.FullName);
         directoryInfo.Delete();
     }
 

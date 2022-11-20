@@ -31,8 +31,8 @@ public class Testing_CopyDirectory{
 
     [TearDown]
     public void TearDown(){
-        NSKurtsTools.KurtsTools.DeleteDirectory(_tempFromDirectory);
-        NSKurtsTools.KurtsTools.DeleteDirectory(_tempToDirectory);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: _tempFromDirectory);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: _tempToDirectory);
     }
 
     [Test]
@@ -49,7 +49,7 @@ public class Testing_CopyDirectory{
 
     [Test]
     public void CopyDirectory_can_copy_to_non_existing_directory(){
-        NSKurtsTools.KurtsTools.DeleteDirectory(_tempToDirectory);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: _tempToDirectory);
         Assume.That(_tempToDirectory, Does.Not.Exist);
 
         NSKurtsTools.KurtsTools.CopyDirectory(_tempFromDirectory, _tempToDirectory);
@@ -78,7 +78,7 @@ public class Testing_CopyDirectory{
     [SupportedOSPlatform("windows")]
     [Test]
     public void Non_recursive_CopyDirectory_can_copy_to_non_existing_directory(){
-        NSKurtsTools.KurtsTools.DeleteDirectory(_tempToDirectory);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: _tempToDirectory);
         Assume.That(_tempToDirectory, Does.Not.Exist);
 
         NSKurtsTools.KurtsTools.CopyDirectory(_tempFromDirectory, _tempToDirectory, false);

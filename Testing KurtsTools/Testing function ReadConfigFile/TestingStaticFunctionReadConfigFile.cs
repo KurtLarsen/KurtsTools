@@ -18,7 +18,7 @@ public class TestingStaticFunctionReadConfigFile{
     [SupportedOSPlatform("windows")]
     [TearDown]
     public void TearDown(){
-        NSKurtsTools.KurtsTools.DeleteDirectory(_tempFolder);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: _tempFolder);
     }
     
     [SupportedOSPlatform("windows")]

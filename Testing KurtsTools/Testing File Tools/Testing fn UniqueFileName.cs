@@ -15,7 +15,7 @@ public class TestingFnUniqueFileName{
 
     [TearDown]
     public void TearDown(){
-        KurtsTools.DeleteDirectory(_tempDirectory);
+        KurtsTools.DeleteDirectory(pathToDirectory: _tempDirectory);
     }
 
     [Test]

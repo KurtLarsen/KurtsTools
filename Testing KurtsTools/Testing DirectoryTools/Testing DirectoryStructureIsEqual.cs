@@ -98,7 +98,7 @@ public class Testing_DirectoryStructureIsEqual{
 
     [TearDown]
     public void TearDown(){
-        KurtsTools.DeleteDirectory(_tempDir);
+        KurtsTools.DeleteDirectory(pathToDirectory: _tempDir);
     }
 
     public static IEnumerable<TestCaseData> TestCaseData(){

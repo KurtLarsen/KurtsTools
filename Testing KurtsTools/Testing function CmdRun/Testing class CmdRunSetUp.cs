@@ -15,7 +15,7 @@ public class Testing_Class_CmdRunSetUp{
 
     [TearDown]
     public void TearDown(){
-        KurtsTools.DeleteDirectory(_tempDir);
+        KurtsTools.DeleteDirectory(pathToDirectory: _tempDir);
     }
     
     [Test]

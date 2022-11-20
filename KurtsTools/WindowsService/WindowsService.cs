@@ -1,5 +1,4 @@
-﻿using System.Configuration.Install;
-using System.ServiceProcess;
+﻿using System.ServiceProcess;
 
 namespace NSKurtsTools;
 
@@ -18,17 +17,18 @@ public static partial class KurtsTools{
     public static bool StopAndDeleteService(string serviceNameOrDisplayName){
         ServiceController? serviceControllerToBeUninstalled = GetServiceControllerByNameOrDisplayName(serviceNameOrDisplayName);
         if (serviceControllerToBeUninstalled == null) return true;
-        
-        // https://stackoverflow.com/questions/12201365/programmatically-remove-a-service-using-c-sharp
-        ServiceInstaller serviceInstallerObj = new(); 
-        // todo: what does Context do?
-        // todo: what does "<<log file path>>" mean?
-        InstallContext context = new("<<log file path>>", null); 
-        serviceInstallerObj.Context = context;
-        serviceInstallerObj.ServiceName = serviceControllerToBeUninstalled.ServiceName; 
-        serviceInstallerObj.Uninstall(null); 
+        if (serviceControllerToBeUninstalled.Status != ServiceControllerStatus.Stopped){
+            if (!serviceControllerToBeUninstalled.CanStop) throw new Exception("service can not stop");
+            serviceControllerToBeUninstalled.Stop();
+        }
 
-        serviceControllerToBeUninstalled = GetServiceControllerByNameOrDisplayName(serviceNameOrDisplayName);
-        return serviceControllerToBeUninstalled == null;
+        CmdRunResult result = CmdRun(new CmdRunSetUp{ Command = "SC", Arguments = $"DELETE {serviceControllerToBeUninstalled.ServiceName}" });
+
+        if (result.ExitCode != 0)
+            throw new Exception(
+                $"Error deleting service {serviceControllerToBeUninstalled.ServiceName}\n{result}");
+        
+
+        return GetServiceControllerByNameOrDisplayName(serviceNameOrDisplayName) == null;
     }
 }

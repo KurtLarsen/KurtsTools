@@ -15,21 +15,33 @@ public class TestingWindowsService{
 
     private static string _httpdExe = null!;
     private static string _httpdConfigRelativeToApacheRoot = null!;
+    private static string _tmpDirectory = null!;
 
     [OneTimeSetUp]
     public void OneTimeSetUp(){
         Assume.That(IsAdministrator(), "User must be Administrator to run this test");
 
         Assume.That(ApacheRoot, Does.Exist, $"Directory not found: [{nameof(ApacheRoot)}] = {ApacheRoot}");
+
         _httpdExe = ApacheRoot + "/bin/httpd.exe";
         Assume.That(_httpdExe, Does.Exist, $"File not found: [{nameof(_httpdExe)}] = {_httpdExe}");
 
-        _httpdConfigRelativeToApacheRoot = "conf/minimal.conf";
-        Assume.That(ApacheRoot + "/" + _httpdConfigRelativeToApacheRoot, Does.Exist);
+        _tmpDirectory = NewTempDirectory();
+        ApacheConfigBuilderProperties minimalProperties = new(){ Listen = "*:81",ServerName = "localhost:81",ErrorLog = $"{_tmpDirectory}Error.log"};
+        string[] minimalConfigLines = ApacheConfigBuilder(minimalProperties);
+
+        _httpdConfigRelativeToApacheRoot = _tmpDirectory + "minimal.conf";
+        File.WriteAllLines(_httpdConfigRelativeToApacheRoot, minimalConfigLines);
+
 
         do{
             _dummyServiceName = "_DummyService_" + Guid.NewGuid();
         } while (GetServiceControllerByNameOrDisplayName(_dummyServiceName) != null);
+    }
+
+    [OneTimeTearDown]
+    public void OneTimeTearDown(){
+        DeleteDirectory(_tmpDirectory);
     }
 
     [SetUp]
@@ -75,8 +87,11 @@ public class TestingWindowsService{
 
         string installArguments = $"-k install -n {_dummyServiceName} -f \"{_httpdConfigRelativeToApacheRoot}\"";
         // CmdRunResult cmdRunResult = CmdRun(_httpdExe, installArguments);
-        CmdRunResult cmdRunResult = CmdRun(new CmdRunSetUp{Command = _httpdExe,Arguments = installArguments,WorkingDirectory = ApacheRoot});
-        Assume.That(cmdRunResult.ExitCode, Is.Zero, $"Fail on {nameof(cmdRunResult)}.{nameof(cmdRunResult.ExitCode)} = <{cmdRunResult.ExitCode}>\n"+cmdRunResult);
+        CmdRunResult cmdRunResult = CmdRun(new CmdRunSetUp
+            { Command = _httpdExe, Arguments = installArguments, WorkingDirectory = ApacheRoot });
+        Assume.That(cmdRunResult.ExitCode, Is.Zero,
+            $"Fail on {nameof(cmdRunResult)}.{nameof(cmdRunResult.ExitCode)} = <{cmdRunResult.ExitCode}>\n" +
+            cmdRunResult);
 
         Assume.That(GetServiceControllerByNameOrDisplayName(_dummyServiceName) != null);
 
@@ -95,4 +110,18 @@ public class TestingWindowsService{
         ServiceController? serviceController = GetServiceControllerByNameOrDisplayName(_dummyServiceName);
         Assume.That(serviceController, Is.Null);
     }
+
+    private static string[] ApacheConfigBuilder(ApacheConfigBuilderProperties apacheConfigBuilderProperties){
+        List<string> lines = new();
+        if(apacheConfigBuilderProperties.Listen!=null) lines.Add($"Listen {apacheConfigBuilderProperties.Listen}");
+        if(apacheConfigBuilderProperties.ServerName!=null) lines.Add($"ServerName {apacheConfigBuilderProperties.ServerName}");
+        if(apacheConfigBuilderProperties.ErrorLog!=null) lines.Add($"ErrorLog {apacheConfigBuilderProperties.ErrorLog}");
+        return lines.ToArray();
+    }
+}
+
+internal record ApacheConfigBuilderProperties{
+    public string? Listen;
+    public string? ServerName;
+    public string? ErrorLog;
 }

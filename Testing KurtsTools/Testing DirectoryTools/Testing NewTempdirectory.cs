@@ -11,7 +11,7 @@ public class Testing_NewTempDirectory{
         string tempDir = NSKurtsTools.KurtsTools.NewTempDirectory();
         Assert.That(tempDir, Does.Exist);
 
-        NSKurtsTools.KurtsTools.DeleteDirectory(tempDir);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: tempDir);
         
         Assert.That(tempDir,Does.Not.Exist);
     }

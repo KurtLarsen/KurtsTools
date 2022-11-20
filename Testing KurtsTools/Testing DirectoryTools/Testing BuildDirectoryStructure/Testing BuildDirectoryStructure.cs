@@ -49,7 +49,7 @@ public class Testing_BuildDirectoryStructure{
 
     [TearDown]
     public void TearDown(){
-        NSKurtsTools.KurtsTools.DeleteDirectory(_tempDir);
+        NSKurtsTools.KurtsTools.DeleteDirectory(pathToDirectory: _tempDir);
     }
 
 

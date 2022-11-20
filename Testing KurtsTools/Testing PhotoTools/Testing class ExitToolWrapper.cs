@@ -7,24 +7,33 @@ namespace NSTesting_KurtsTools.Testing_PhotoTools;
 
 [TestFixture, SupportedOSPlatform("windows")]
 public class Testing_Class_ExitToolWrapper{
-    private const string PathToExifTool = @"Testing PhotoTools\exiftool.exe\exiftool_v12.49.exe";
-    private ExifToolWrapper _instanceOfExifToolWrapper = null!;
+    private const string PathToExifTool = @"Testing PhotoTools\TestData\applicarions\exiftool_v12.49.exe";
+    private const string TestFilesRoot = @"Testing PhotoTools\TestData\files\";
+    private static ExifToolWrapper _instanceOfExifToolWrapper = null!;
+
+    // private static string? _aEmptyDirectoryCreatedDuringCreatingTestCaseData;
 
     [OneTimeSetUp]
-    public void OneTimeSetup(){
+    public static void  OneTimeSetup(){
+        Assume.That(PathToExifTool, Does.Exist);
+
         try{
             _instanceOfExifToolWrapper = new ExifToolWrapper(PathToExifTool);
         } catch (Exception e){
-            Assume.That(false, $"An exception was thrown when creating instance of {nameof(EmptyDirectory)}\n{e}");
+            Assume.That(false,
+                $"An exception was thrown in {nameof(Testing_Class_ExitToolWrapper)}.{nameof(OneTimeSetup)}() when creating instance of class {nameof(PathToExifTool)}:\n\n{e}\n");
         }
     }
+
+    // [OneTimeTearDown]
+    // public static void OneTimeTearDown(){
+    //     // KurtsTools.DeleteDirectory(pathToDirectory: _aEmptyDirectoryCreatedDuringCreatingTestCaseData);
+    // }
 
     private static IEnumerable<TestCaseData> Source(){
         yield return new TestCaseData(
             new TestInput{
-                OkFiles = new[]{
-                    @"Testing PhotoTools\TestData\image file from internet.jpg",
-                },
+                OkFiles = new[]{ TestFilesRoot + @"image file from internet.jpg" },
                 NotExistingFiles = Array.Empty<string>(),
             },
             new ExpectedResult{
@@ -48,7 +57,7 @@ public class Testing_Class_ExitToolWrapper{
                 OkFiles = Array.Empty<string>(),
                 NotExistingFiles = Array.Empty<string>(),
                 EmptyDirectories = Array.Empty<string>(),
-                NotExistingDirectories=new []{@"Testing PhotoTools\TestData\not existing directory\"},
+                NotExistingDirectories = new[]{ TestFilesRoot + @"not existing directory\" },
             },
             new ExpectedResult{
                 ExifToolExitCode = 1,
@@ -59,12 +68,13 @@ public class Testing_Class_ExitToolWrapper{
             }
         ).SetName("not existing directory - ending with backslash");
 
-        
+
         yield return new TestCaseData(
             new TestInput{
                 OkFiles = Array.Empty<string>(),
                 NotExistingFiles = Array.Empty<string>(),
-                EmptyDirectories = new []{@"Testing PhotoTools\TestData\empty directory\"},
+                // EmptyDirectories = new[]{_aEmptyDirectoryCreatedDuringCreatingTestCaseData ?? (_aEmptyDirectoryCreatedDuringCreatingTestCaseData = KurtsTools.NewTempDirectory())},
+                EmptyDirectories = new[]{TestFilesRoot + @"empty directory" },
             },
             new ExpectedResult{
                 ExifToolExitCode = 0,
@@ -79,7 +89,7 @@ public class Testing_Class_ExitToolWrapper{
             new TestInput{
                 OkFiles = Array.Empty<string>(),
                 NotExistingFiles = Array.Empty<string>(),
-                EmptyDirectories = new []{@"Testing PhotoTools\TestData\empty directory"},
+                EmptyDirectories = new[]{ TestFilesRoot + @"empty directory" },
             },
             new ExpectedResult{
                 ExifToolExitCode = 0,
@@ -93,8 +103,8 @@ public class Testing_Class_ExitToolWrapper{
         yield return new TestCaseData(
             new TestInput{
                 OkFiles = new[]{
-                    @"Testing PhotoTools\TestData\image file from internet.jpg",
-                    @"Testing PhotoTools\TestData\jpg files\7P2A1833.jpg",
+                    TestFilesRoot + @"image file from internet.jpg",
+                    TestFilesRoot + @"jpg files\7P2A1833.jpg",
                 },
                 NotExistingFiles = Array.Empty<string>(),
             },
@@ -126,17 +136,17 @@ public class Testing_Class_ExitToolWrapper{
         yield return new TestCaseData(
             new TestInput{
                 OkFiles = new[]{
-                    @"Testing PhotoTools\TestData\image file from internet.jpg",
+                    TestFilesRoot + @"image file from internet.jpg",
                 },
                 NotExistingFiles = new[]{
-                    @"Testing PhotoTools\TestData\notExistingFile.jpg",
+                    TestFilesRoot + @"notExistingFile.jpg",
                 },
             },
             new ExpectedResult{
                 ExifToolExitCode = 1,
                 ExifToolStdOutStartsWith = "<?xml version='1.0' encoding='UTF-8'?>",
                 ExifToolErrOutStartsWith =
-                    "Error: File not found - Testing PhotoTools/TestData/notExistingFile.jpg\r\n    1 image files read\r\n    1 files could not be read\r\n",
+                    $"Error: File not found - {TestFilesRoot.Replace('\\', '/') + @"notExistingFile.jpg"}\r\n    1 image files read\r\n    1 files could not be read\r\n",
                 ExpectedExifFromMultipleFiles = new[]{
                     new ExpectedExifFromSingleFile{
                         ExifItemCount = 35,
@@ -156,8 +166,9 @@ public class Testing_Class_ExitToolWrapper{
             },
             new ExpectedResult{
                 ExifToolExitCode = 0,
-                ConvertingToXmlException = new System.Xml.XmlException("Data at the root level is invalid. Line 1, position 1."),
-                
+                ConvertingToXmlException =
+                    new System.Xml.XmlException("Data at the root level is invalid. Line 1, position 1."),
+
                 ExifToolStdOutStartsWith =
                     "NAME\r\n    exiftool - Read and write meta information in files\r\n\r\nRUNNING IN WINDOWS",
                 ExifToolErrOutStartsWith = "",
@@ -167,7 +178,7 @@ public class Testing_Class_ExitToolWrapper{
         yield return new TestCaseData(
             new TestInput{
                 OkFiles = new[]{
-                    @"Testing PhotoTools\TestData\jpg files\",
+                    TestFilesRoot + @"jpg files\",
                 },
                 NotExistingFiles = Array.Empty<string>(),
             },
@@ -182,7 +193,7 @@ public class Testing_Class_ExitToolWrapper{
         yield return new TestCaseData(
             new TestInput{
                 OkFiles = new[]{
-                    @"Testing PhotoTools\TestData\jpg files",
+                    TestFilesRoot + @"jpg files",
                 },
                 NotExistingFiles = Array.Empty<string>(),
             },
@@ -246,26 +257,30 @@ public class Testing_Class_ExitToolWrapper{
     }
 
     [Test, TestCaseSource(nameof(Source))]
-    public void Test_function_GetExif(TestInput input, ExpectedResult expectedResult){
+    public void Test_fn_GetExif(TestInput testInput, ExpectedResult expectedResult){
         GetExifParams getExifParams = new();
 
-        foreach (string okFile in input.OkFiles){
-            Assume.That(okFile, Does.Exist);
+        foreach (string okFile in testInput.OkFiles){
+            Assume.That(okFile, Does.Exist,
+                $"File in collection \"{nameof(testInput)}.{nameof(testInput.OkFiles)}\" not found:\n{okFile}\n");
             getExifParams.InputFiles.Add(okFile);
         }
 
-        foreach (string notExistingFile in input.NotExistingFiles){
-            Assume.That(notExistingFile, Does.Not.Exist);
+        foreach (string notExistingFile in testInput.NotExistingFiles){
+            Assume.That(notExistingFile, Does.Not.Exist,
+                $"File in collection \"{nameof(testInput)}.{nameof(testInput.NotExistingFiles)}\" should not exist:\n{notExistingFile}\n");
             getExifParams.InputFiles.Add(notExistingFile);
         }
 
-        foreach (string emptyDirectory in input.EmptyDirectories){
-            Assume.That(emptyDirectory,Does.Exist);
+        foreach (string emptyDirectory in testInput.EmptyDirectories){
+            Assume.That(emptyDirectory, Does.Exist,
+                $"Directory in collection \"{nameof(testInput)}.{nameof(testInput.EmptyDirectories)}\" not found:\n{emptyDirectory}\n");
             getExifParams.InputFiles.Add(emptyDirectory);
         }
 
-        foreach (string notExistingDirectory in input.NotExistingDirectories){
-            Assume.That(notExistingDirectory,Does.Not.Exist);
+        foreach (string notExistingDirectory in testInput.NotExistingDirectories){
+            Assume.That(notExistingDirectory, Does.Not.Exist,
+                $"Directory in collection \"{nameof(testInput)}.{nameof(testInput.NotExistingDirectories)}\" should not exist:\n{notExistingDirectory}\n");
             getExifParams.InputFiles.Add(notExistingDirectory);
         }
 
@@ -274,13 +289,17 @@ public class Testing_Class_ExitToolWrapper{
         Assert.That(resultOfFunctionResultOfGetExif, Is.Not.Null);
 
         if (expectedResult.ConvertingToXmlException == null){
-            Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException,Is.Null,$"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
+            Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException, Is.Null,
+                $"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
         }
         else{
-            Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException,Is.Not.Null,$"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
-            Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException!.GetType(),Is.EqualTo(expectedResult.ConvertingToXmlException.GetType()),$"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");    
+            Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException, Is.Not.Null,
+                $"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
+            Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException!.GetType(),
+                Is.EqualTo(expectedResult.ConvertingToXmlException.GetType()),
+                $"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
         }
-        
+
 
         Assert.That(resultOfFunctionResultOfGetExif.ExitToolReturnCode, Is.EqualTo(expectedResult.ExifToolExitCode));
 
@@ -289,7 +308,8 @@ public class Testing_Class_ExitToolWrapper{
                 $"Result of [{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ExifToolStdOut)}] failed:");
         }
         else{
-            Assert.That(resultOfFunctionResultOfGetExif.ExifToolErrOut, Does.StartWith(expectedResult.ExifToolErrOutStartsWith),
+            Assert.That(resultOfFunctionResultOfGetExif.ExifToolErrOut,
+                Does.StartWith(expectedResult.ExifToolErrOutStartsWith),
                 $"Result of [{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ExifToolStdOut)}] failed:");
         }
 
@@ -302,32 +322,30 @@ public class Testing_Class_ExitToolWrapper{
                 Does.StartWith(expectedResult.ExifToolStdOutStartsWith));
         }
 
-        Assert.That(resultOfFunctionResultOfGetExif.ListOfSingleFiles.Count, Is.EqualTo(expectedResult.ExpectedExifFromMultipleFiles.Length),
+        Assert.That(resultOfFunctionResultOfGetExif.ListOfSingleFiles.Count,
+            Is.EqualTo(expectedResult.ExpectedExifFromMultipleFiles.Length),
             $"Result of [{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}.Count] failed:");
 
 
         for (int n = 0; n < expectedResult.ExpectedExifFromMultipleFiles.Length; n++){
             Assert.That(resultOfFunctionResultOfGetExif.ListOfSingleFiles[n].Count,
-                Is.EqualTo(expectedResult.ExpectedExifFromMultipleFiles[n].ExifItemCount),$"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}[{n}].Count> failed");
+                Is.EqualTo(expectedResult.ExpectedExifFromMultipleFiles[n].ExifItemCount),
+                $"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}[{n}].Count> failed");
 
             foreach (ExifItem aExpectedItem in expectedResult.ExpectedExifFromMultipleFiles[n].SomeOfTheExifItems){
                 ExifItem? findResult = resultOfFunctionResultOfGetExif.ListOfSingleFiles[n].Find(item =>
                     item.Group.Equals(aExpectedItem.Group) && item.Key.Equals(aExpectedItem.Key) &&
                     item.Value.Equals(aExpectedItem.Value));
-                Assert.That(findResult, Is.Not.Null,$"Failed finding expected {nameof(ExifItem)}{aExpectedItem.ToString()} in {nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}[{n}]:\n{resultOfFunctionResultOfGetExif.ListOfSingleFiles[n]}");
+                Assert.That(findResult, Is.Not.Null,
+                    $"Failed finding expected {nameof(ExifItem)}{aExpectedItem.ToString()} in {nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}[{n}]:\n{resultOfFunctionResultOfGetExif.ListOfSingleFiles[n]}");
             }
         }
     }
-
-
-
-
-    private const string EmptyDirectory = @"Testing PhotoTools\TestData\empty directory";
 }
 
 public record ExpectedExifFromSingleFile{
     public int ExifItemCount;
-    public ExifItem[] SomeOfTheExifItems= Array.Empty<ExifItem>();
+    public ExifItem[] SomeOfTheExifItems = Array.Empty<ExifItem>();
 }
 
 public record TestInput{

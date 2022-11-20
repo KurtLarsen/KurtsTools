@@ -257,79 +257,7 @@
       <None Update="Testing PhotoTools\TestData\jpg files\7P2A1838.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing PhotoTools\TestData\allMetadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3, alle egenskaber fjernet af windows 10.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3, remove metadata via exiftool.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3 file from Canon R5.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3 to jpg via LR, incl All Metadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3 to jpg via LR, incl Copyright Only.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\cr3 to jpg via LR, remove metadata via exiftool.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\image file from internet.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\noMetadata.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-17-34.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-17-52.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-17-70.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-45-77.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-45-85.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-45-92.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\timestamp_2022-05-28_13-57-47-94.CR3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\7P2A1833.CR3.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\7p2a1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\a.cr3.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
       <None Update="Testing PhotoTools\TestData\jpg files\7P2A1833.jpg.exif">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\zero-length-file.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\exif.xml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing PhotoTools\TestData\NonImageFile.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Testing PhotoTools\exiftoolexe\exiftool_v11.64.exe">
@@ -480,16 +408,142 @@
       <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\conf\minimal.conf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <!--
-      <None Update="Testing PhotoTools\TestData\empty directory">
+      <None Update="Testing PhotoTools\TestData\files\7P2A1833.CR3.exif">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      -->
+      <None Update="Testing PhotoTools\TestData\files\7p2a1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\a.cr3.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\allMetadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3, alle egenskaber fjernet af windows 10.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3, remove metadata via exiftool.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 file from Canon R5.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 to jpg via LR, incl All Metadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 to jpg via LR, incl All Metadata, remove personal info and GPS info.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 to jpg via LR, incl Copyright Only.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 to jpg via LR, remove metadata via exiftool.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\exif.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\image file from internet.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\noMetadata.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\NonImageFile.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-17-34.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-17-52.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-17-70.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-45-77.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-45-85.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-45-92.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\timestamp_2022-05-28_13-57-47-94.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\zero-length-file.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\applicarions\exiftool_v12.49.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\applicarions\exiftool_v11.64.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\applicarions\exiftool_v11.86.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\applicarions\exiftool_v12.40.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 files\7P2A1833.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 files\7P2A1834.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 files\7P2A1835.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 files\7P2A1836.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 files\7P2A1837.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\cr3 files\7P2A1838.CR3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1833.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1833.jpg.exif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1834.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1835.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1836.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1837.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1838.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+<!--      <None Update="Testing PhotoTools\TestData\files\emptyDirectory\*">-->
+<!--        <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
+<!--      </None>-->
+<!--      <None Update="Testing PhotoTools\TestData\empty directory">-->
+<!--        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+<!--      </None>-->
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Testing PhotoTools\exiftool.exe" />
-      <Folder Include="Testing PhotoTools\TestData\empty directory" />
+<!--      <Folder Include="Testing PhotoTools\TestData\files\empty directory\**" >-->
+<!--        <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
+<!--      </Folder>-->
+      <Folder Include="Testing PhotoTools\TestData\files\empty directory" />
       <Folder Include="Testing WindowsService\httpd.exe" />
     </ItemGroup>
 
@@ -500,6 +554,10 @@
     <ItemGroup>
       <EmbeddedResource Remove="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\include\**" />
     </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="xcopy /t /e &quot;$(ProjectDir)Testing PhotoTools\TestData\files\empty directory&quot; &quot;$(ProjectDir)$(OutDir)Testing PhotoTools\TestData\files\empty directory\&quot;" />
+    </Target>
 
     <!--
     <ItemGroup>
