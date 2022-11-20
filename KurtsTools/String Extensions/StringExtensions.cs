@@ -49,10 +49,11 @@ public static class StringExtensions{
         };
     }
 
-    [Obsolete($"FirstWord is trimmed when returning from .{nameof(FirstWord)}")]
-    // ReSharper disable once UnusedMember.Global
-    public static string TrimFirstWord(this string value){
-        string[] a = value.Trim().Split(SplitterChars, 2);
+    /**
+     * <returns>Trimmed string where first word is deleted</returns>
+     */
+    public static string DeleteFirstWord(this string value){
+        string[] a = value.Trim().Split(SplitterChars,2,StringSplitOptions.RemoveEmptyEntries);
         return a.Length == 2 ? a[1] : "";
     }
 

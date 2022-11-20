@@ -125,4 +125,12 @@ public class Testing_String_Extensions{
         return text.Directory();
     }
 
+    [Test]
+    [TestCase("abc def ghi",ExpectedResult = "def ghi")]
+    [TestCase("  abc  \tdef  \tghi",ExpectedResult = "def  \tghi")]
+    [TestCase("  abc  \t",ExpectedResult = "")]
+    public string DeleteFirstWord_return_correct(string text){
+        return text.DeleteFirstWord();
+    }
+
 }
