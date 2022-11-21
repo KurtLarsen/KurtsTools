@@ -1,4 +1,6 @@
 ﻿using System.Security.Cryptography;
+// ReSharper disable UnusedMember.Global
+
 // ReSharper disable ConvertToAutoPropertyWhenPossible
 
 namespace NSKurtsTools;
@@ -21,6 +23,7 @@ public static partial class KurtsTools{
      * <returns>Full path file name</returns>
      * <example><code>string newFileName=NewFileName()+".txt"</code></example>
      */
+    [Obsolete("Use UniqueFileName()")]
     public static string NewFileName(){
         return NewFileName(Path.GetTempPath());
     }
@@ -31,6 +34,8 @@ public static partial class KurtsTools{
      * <param name="directoryName">Path to directory</param>
      * <exception cref="DirectoryNotFoundException">If directory is not found</exception>
      */
+    [Obsolete("Use UniqueFileName()")]
+    // ReSharper disable once MemberCanBePrivate.Global
     public static string NewFileName(string directoryName){
         if (!Directory.Exists(directoryName)) throw new DirectoryNotFoundException(directoryName);
         if (!directoryName.EndsWith(Path.DirectorySeparatorChar)) directoryName += Path.DirectorySeparatorChar;
@@ -41,14 +46,14 @@ public static partial class KurtsTools{
 
         return newFileName;
     }
-    
+
     /**
      * <summary>Return an unused file name in the given directory</summary>
      * <returns>Full path file name</returns>
      * <param name="directoryInfo">The directory of the new file name</param>
      * <exception cref="DirectoryNotFoundException">If directory is not found</exception>
      */
-    // ReSharper disable once SuggestBaseTypeForParameter
+    [Obsolete("Use UniqueFileName()")]
     public static string NewFileName(DirectoryInfo directoryInfo){
         return NewFileName(directoryInfo.FullName);
     }
@@ -61,7 +66,9 @@ public static partial class KurtsTools{
      * <returns>Unique filename</returns>
      * <example><code>string s=UniqueFileName("myfile{0}.txt")</code></example>
      */
-    public static string UniqueFileName(string filePathWithPlaceholder,int indexStart = 2){
+    [Obsolete("Parameter indexStart is deprecated")]
+    // ReSharper disable once MethodOverloadWithOptionalParameter
+    public static string UniqueFileName(string filePathWithPlaceholder, int indexStart = 2){
         string dir = filePathWithPlaceholder.Directory();
         if (string.Format(dir, 1) != dir) throw new ArgumentException("Placeholder in directory not allowed");
         string filename = filePathWithPlaceholder.FileName();
@@ -76,5 +83,11 @@ public static partial class KurtsTools{
         } while (File.Exists(result));
 
         return result;
+    }
+
+    public static string UniqueFileName(string pathWithPlaceholder){
+        if (pathWithPlaceholder.Directory().ContainsUniqueNamePlaceholder())
+            throw new ArgumentException("Placeholder in directory not allowed");
+        return UniqueName(pathWithPlaceholder, File.Exists);
     }
 }

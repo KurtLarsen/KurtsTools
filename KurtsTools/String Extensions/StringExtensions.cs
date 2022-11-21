@@ -1,4 +1,7 @@
-﻿namespace NSKurtsTools;
+﻿using System.Runtime.Versioning;
+using static NSKurtsTools.KurtsTools;
+
+namespace NSKurtsTools;
 
 /**
  * <returns>Parent until space or tab</returns>
@@ -87,5 +90,13 @@ public static class StringExtensions{
     public static string FileName(this string value){
         FileInfo fi = new(value);
         return fi.Name;
+    }
+
+    /**
+     * <summary>Checks if string contains placeholder used by <see cref="KurtsTools.UniqueName"/></summary>
+     */
+    [SupportedOSPlatform("windows")]
+    public static bool ContainsUniqueNamePlaceholder(this string value){
+        return UniqueNameRegex.Split(value).Length>1;
     }
 }

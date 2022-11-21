@@ -9,11 +9,11 @@ namespace NSTesting_KurtsTools.Testing_WindowsService;
 [SupportedOSPlatform("windows")]
 [TestFixture]
 public class TestingWindowsService{
-    private const string ApacheRoot = @"Testing WindowsService/Apache/httpd-2.4.46-o111j-x64-vc15/Apache24";
+    private const string ApacheHttpdExe =
+        @"Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\httpd.exe";
 
     private static string _dummyServiceName = null!;
 
-    private static string _httpdExe = null!;
     private static string _httpdConfigRelativeToApacheRoot = null!;
     private static string _tmpDirectory = null!;
 
@@ -21,23 +21,24 @@ public class TestingWindowsService{
     public void OneTimeSetUp(){
         Assume.That(IsAdministrator(), "User must be Administrator to run this test");
 
-        Assume.That(ApacheRoot, Does.Exist, $"Directory not found: [{nameof(ApacheRoot)}] = {ApacheRoot}");
-
-        _httpdExe = ApacheRoot + "/bin/httpd.exe";
-        Assume.That(_httpdExe, Does.Exist, $"File not found: [{nameof(_httpdExe)}] = {_httpdExe}");
+        Assume.That(ApacheHttpdExe, Does.Exist, $"File not found: [{nameof(ApacheHttpdExe)}] = {ApacheHttpdExe}");
 
         _tmpDirectory = NewTempDirectory();
-        ApacheConfigBuilderProperties minimalProperties = new(){ Listen = "*:81",ServerName = "localhost:81",ErrorLog = $"{_tmpDirectory}Error.log"};
+        ApacheConfigBuilderProperties minimalProperties = new()
+            { Listen = "*:81", ServerName = "localhost:81", ErrorLog = $"{_tmpDirectory}Error.log" };
         string[] minimalConfigLines = ApacheConfigBuilder(minimalProperties);
 
         _httpdConfigRelativeToApacheRoot = _tmpDirectory + "minimal.conf";
         File.WriteAllLines(_httpdConfigRelativeToApacheRoot, minimalConfigLines);
-
-
-        do{
-            _dummyServiceName = "_DummyService_" + Guid.NewGuid();
-        } while (GetServiceControllerByNameOrDisplayName(_dummyServiceName) != null);
+        
+        _dummyServiceName = UniqueName("_test_can_be_deleted_{#}", ServiceNameExists);
     }
+
+
+    private static bool ServiceNameExists(string name){
+        return GetServiceControllerByNameOrDisplayName(_dummyServiceName) != null;
+    }
+
 
     [OneTimeTearDown]
     public void OneTimeTearDown(){
@@ -88,7 +89,7 @@ public class TestingWindowsService{
         string installArguments = $"-k install -n {_dummyServiceName} -f \"{_httpdConfigRelativeToApacheRoot}\"";
         // CmdRunResult cmdRunResult = CmdRun(_httpdExe, installArguments);
         CmdRunResult cmdRunResult = CmdRun(new CmdRunSetUp
-            { Command = _httpdExe, Arguments = installArguments, WorkingDirectory = ApacheRoot });
+            { Command = ApacheHttpdExe, Arguments = installArguments /*WorkingDirectory = ApacheRoot*/ });
         Assume.That(cmdRunResult.ExitCode, Is.Zero,
             $"Fail on {nameof(cmdRunResult)}.{nameof(cmdRunResult.ExitCode)} = <{cmdRunResult.ExitCode}>\n" +
             cmdRunResult);
@@ -105,17 +106,19 @@ public class TestingWindowsService{
     }
 
     private static void StopAndRemoveDummyService(){
-        CmdRun(_httpdExe, $"-k stop -n {_dummyServiceName}");
-        CmdRun(_httpdExe, $"-k uninstall -n {_dummyServiceName}");
+        CmdRun(ApacheHttpdExe, $"-k stop -n {_dummyServiceName}");
+        CmdRun(ApacheHttpdExe, $"-k uninstall -n {_dummyServiceName}");
         ServiceController? serviceController = GetServiceControllerByNameOrDisplayName(_dummyServiceName);
         Assume.That(serviceController, Is.Null);
     }
 
     private static string[] ApacheConfigBuilder(ApacheConfigBuilderProperties apacheConfigBuilderProperties){
         List<string> lines = new();
-        if(apacheConfigBuilderProperties.Listen!=null) lines.Add($"Listen {apacheConfigBuilderProperties.Listen}");
-        if(apacheConfigBuilderProperties.ServerName!=null) lines.Add($"ServerName {apacheConfigBuilderProperties.ServerName}");
-        if(apacheConfigBuilderProperties.ErrorLog!=null) lines.Add($"ErrorLog {apacheConfigBuilderProperties.ErrorLog}");
+        if (apacheConfigBuilderProperties.Listen != null) lines.Add($"Listen {apacheConfigBuilderProperties.Listen}");
+        if (apacheConfigBuilderProperties.ServerName != null)
+            lines.Add($"ServerName {apacheConfigBuilderProperties.ServerName}");
+        if (apacheConfigBuilderProperties.ErrorLog != null)
+            lines.Add($"ErrorLog {apacheConfigBuilderProperties.ErrorLog}");
         return lines.ToArray();
     }
 }

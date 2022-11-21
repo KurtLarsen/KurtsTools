@@ -531,6 +531,24 @@
       <None Update="Testing PhotoTools\TestData\files\jpg files\7P2A1838.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\httpd.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\libapr-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\libapriconv-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\libaprutil-1.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\libhttpd.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\pcre.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
 <!--      <None Update="Testing PhotoTools\TestData\files\emptyDirectory\*">-->
 <!--        <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
 <!--      </None>-->
@@ -544,7 +562,6 @@
 <!--        <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
 <!--      </Folder>-->
       <Folder Include="Testing PhotoTools\TestData\files\empty directory" />
-      <Folder Include="Testing WindowsService\httpd.exe" />
     </ItemGroup>
 
     <ItemGroup>

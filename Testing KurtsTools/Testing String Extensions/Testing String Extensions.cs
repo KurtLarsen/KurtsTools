@@ -1,4 +1,5 @@
-﻿using NSKurtsTools;
+﻿using System.Runtime.Versioning;
+using NSKurtsTools;
 using NUnit.Framework;
 
 namespace NSTesting_KurtsTools.Testing_String_Extensions;
@@ -30,6 +31,8 @@ public class Testing_String_Extensions{
     [TestCase("ABC\rdef",ExpectedResult="ABC",TestName = "ABC<return>")]
     [TestCase("ABC def",ExpectedResult="ABC",TestName = "ABC<space>")]
     [TestCase("ABC\tdef",ExpectedResult="ABC",TestName = "ABC<tab>")]
+    
+    [TestCase(" \tabc",ExpectedResult = "abc")]
     public string FirstWord_returns_first_word_from_text(string text){
         return text.FirstWord();
     }
@@ -133,4 +136,12 @@ public class Testing_String_Extensions{
         return text.DeleteFirstWord();
     }
 
+
+    [Test,SupportedOSPlatform("windows")]
+    [TestCase("{#}",ExpectedResult = true)]
+    [TestCase("abc{#}",ExpectedResult = true)]
+    [TestCase("abc",ExpectedResult = false)]
+    public bool ContainsUniqueNamePlaceholder_works(string text){
+        return text.ContainsUniqueNamePlaceholder();
+    }
 }

@@ -30,17 +30,6 @@ public class TestingFnUniqueFileName{
     }
 
     [Test]
-    public void without_numbering_and_with_startIndex(){
-        string existingFileName = _tempDirectory + "abc.txt";
-        File.WriteAllText(existingFileName,"");
-
-        string result= KurtsTools.UniqueFileName(existingFileName,5);
-       
-        Assert.That(result,Does.EndWith("abc5.txt"));
-
-    }
-
-    [Test]
     public void with_numbering_and_without_startIndex(){
         string existingFileName = _tempDirectory + "ab{0}c.txt";
         File.WriteAllText(existingFileName,"");
@@ -51,14 +40,5 @@ public class TestingFnUniqueFileName{
 
     }
 
-    [Test]
-    public void with_numbering_and_with_startIndex(){
-        string existingFileName = _tempDirectory + "ab{0}c.txt";
-        File.WriteAllText(existingFileName,"");
 
-        string result= KurtsTools.UniqueFileName(existingFileName,5);
-       
-        Assert.That(result,Does.EndWith("ab5c.txt"));
-
-    }
 }
