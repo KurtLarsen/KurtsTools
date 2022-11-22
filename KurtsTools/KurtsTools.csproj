@@ -28,7 +28,7 @@ Windows
 - StopAndDeleteService
 - CmdRun
 - ArgumentHandler</Description>
-        <PackageVersion>0.0.17</PackageVersion>
+        <PackageVersion>0.0.18</PackageVersion>
         <Title>Kurts Tools Library</Title>
         <Copyright>Kurt Larsen</Copyright>
         <PackageId>KurtsTools</PackageId>

@@ -275,120 +275,6 @@
       <None Update="Testing WindowsService\httpd.exe\httpd_v2.4.46.exe">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\ab.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\abs.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\ApacheMonitor.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_crypto_openssl-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_dbd_mysql-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_dbd_odbc-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_dbd_sqlite3-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\apr_ldap-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\brotli.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\dbmmanage.pl">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htcacheclean.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htdbm.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htdigest.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\htpasswd.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httpd.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httpd.exe -k stop">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httpd.exe -k uninstall">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\httxt2dbm.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libapr-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libapriconv-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libaprutil-1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libbrotli.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libcrypto-1_1-x64.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libcurl.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libhttpd.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libssl-1_1-x64.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\libxml2.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\logresolve.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\lua52.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\nghttp2.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\openssl.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\pcre.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\rotatelogs.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\sqlite3.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\sqlite3.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\verifybins.bat">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\wintty.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\bin\zlib1.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
       <None Update="Testing PhotoTools\exiftool.exe\exiftool_v11.64.exe">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
@@ -402,12 +288,6 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Remove="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\include\**" />
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\conf\httpd.conf">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Testing WindowsService\Apache\httpd-2.4.46-o111j-x64-vc15\Apache24\conf\minimal.conf">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
       <None Update="Testing PhotoTools\TestData\files\7P2A1833.CR3.exif">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>

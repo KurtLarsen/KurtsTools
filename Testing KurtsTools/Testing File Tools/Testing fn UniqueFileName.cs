@@ -18,25 +18,50 @@ public class TestingFnUniqueFileName{
         KurtsTools.DeleteDirectory(pathToDirectory: _tempDirectory);
     }
 
-    [Test]
-    public void without_numbering_and_without_startIndex(){
-        string existingFileName = _tempDirectory + "abc.txt";
-        File.WriteAllText(existingFileName,"");
 
-       string result= KurtsTools.UniqueFileName(existingFileName);
+    [Test]
+    public void without_placeholder(){
+
+        string maskWithoutPlaceholder = _tempDirectory + "abc.txt";
+        
+        string newFileName= KurtsTools.UniqueFileName(maskWithoutPlaceholder);
        
-       Assert.That(result,Does.EndWith("abc2.txt"));
+        Assert.That(newFileName,Does.EndWith(@"\abc.txt"));
+        
+        File.WriteAllText(newFileName,"dummy content");
+
+        newFileName= KurtsTools.UniqueFileName(maskWithoutPlaceholder);
+       
+        Assert.That(newFileName,Does.EndWith(@"\abc.txt2"));
+        
+        File.WriteAllText(newFileName,"dummy content");
+        
+        newFileName= KurtsTools.UniqueFileName(maskWithoutPlaceholder);
+       
+        Assert.That(newFileName,Does.EndWith(@"\abc.txt3"));
 
     }
 
     [Test]
-    public void with_numbering_and_without_startIndex(){
-        string existingFileName = _tempDirectory + "ab{0}c.txt";
-        File.WriteAllText(existingFileName,"");
+    public void with_placeholder(){
 
-        string result= KurtsTools.UniqueFileName(existingFileName);
+        string maskWithPlaceholder = _tempDirectory + "abc{#}.txt";
+        
+        string newFileName= KurtsTools.UniqueFileName(maskWithPlaceholder);
        
-        Assert.That(result,Does.EndWith("ab2c.txt"));
+        Assert.That(newFileName,Does.EndWith(@"\abc.txt"));
+        
+        File.WriteAllText(newFileName,"dummy content");
+
+        newFileName= KurtsTools.UniqueFileName(maskWithPlaceholder);
+       
+        Assert.That(newFileName,Does.EndWith(@"\abc2.txt"));
+        
+        File.WriteAllText(newFileName,"dummy content");
+        
+        newFileName= KurtsTools.UniqueFileName(maskWithPlaceholder);
+       
+        Assert.That(newFileName,Does.EndWith(@"\abc3.txt"));
 
     }
 
