@@ -38,4 +38,18 @@ public partial class KurtsTools{
 
     internal static readonly Regex UniqueNameRegex = new("{#+}");
 
+    /**
+     * <returns>Random word, 1 - 10 char long</returns>
+     */
+    public static string RandomWord(){
+        Random rnd = new();
+        int length = rnd.Next(1, 10);
+        char[] c = new char[length];
+        for(int n=0;n<length;n++){
+            c[n] =(char)rnd.Next(97, 122);
+        }
+
+        return new string(c);
+    }
+
 }
