@@ -1,8 +1,3 @@
-
-
-
-using System;
-using System.IO;
 using System.Runtime.Versioning;
 using NSKurtsTools;
 using NUnit.Framework;
