@@ -16,6 +16,7 @@ public partial class KurtsTools{
      * </code></example>
      */
     public static string UniqueName(string mask, Func<string, bool> nameExistsFunc){
+        
         string[] a=UniqueNameRegex.Split(mask);
         
         if (a.Length == 1){ // no placeholder => set a as if there was a placeholder in the end 
@@ -53,3 +54,4 @@ public partial class KurtsTools{
     }
 
 }
+

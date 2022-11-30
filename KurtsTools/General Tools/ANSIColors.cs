@@ -22,5 +22,36 @@ public static class Ansi{
     public const string BackCyan = "\x1b[46m";
     public const string BackWhite = "\x1b[47m";
 
+    public static string Black(string text){
+        return FrontBlack + text + Reset;
+    }
+    public static string Red(string text){
+        return FrontRed + text + Reset;
+    }
+    public static string Green(string text){
+        return FrontGreen + text + Reset;
+    }
+    public static string Yellow(string text){
+        return FrontYellow + text + Reset;
+    }
+
+    public static string Magenta(string text){
+        return FrontMagenta + text + Reset;
+    }
+    public static string Cyan(string text){
+        return FrontCyan + text + Reset;
+    }
+    public static string White(string text){
+        return FrontWhite + text + Reset;
+    }
+    public static string Blue(string text){
+        return FrontBlue + text + Reset;
+    }
 }
 
+
+public static class AnsiConsole{
+    public static void WriteLine(string frontBlue, string text){
+        throw new NotImplementedException();
+    }
+}
