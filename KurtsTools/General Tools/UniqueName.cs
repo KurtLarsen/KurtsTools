@@ -37,7 +37,7 @@ public partial class KurtsTools{
     }
 
 
-    internal static readonly Regex UniqueNameRegex = new("{#+}");
+    internal static readonly Regex UniqueNameRegex = MyRegex();
 
     /**
      * <returns>Random word, 1 - 10 char long</returns>
@@ -53,5 +53,7 @@ public partial class KurtsTools{
         return new string(c);
     }
 
+    [GeneratedRegex("{#+}")]
+    private static partial Regex MyRegex();
 }
 

@@ -1,4 +1,8 @@
 // ReSharper disable UnusedMember.Global
+// ReSharper disable InconsistentNaming
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedParameter.Global
 namespace NSKurtsTools;
 
 public static class Ansi{

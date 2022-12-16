@@ -9,7 +9,7 @@ namespace NSTesting_KurtsTools.Testing_WindowsService;
 [SupportedOSPlatform("windows")]
 [TestFixture]
 public class TestingWindowsService{
-    private const string ApacheHttpdExe =
+    private const string FrontApacheHttpdExe =
         @"Testing WindowsService\TestData\applications\Apache\httpd-2.4.46-o111j-x64-vc15\httpd.exe";
 
     private static string _dummyServiceName = null!;
@@ -21,7 +21,7 @@ public class TestingWindowsService{
     public void OneTimeSetUp(){
         Assume.That(IsAdministrator(), "User must be Administrator to run this test");
 
-        Assume.That(ApacheHttpdExe, Does.Exist, $"File not found: [{nameof(ApacheHttpdExe)}] = {ApacheHttpdExe}");
+        Assume.That(FrontApacheHttpdExe, Does.Exist, $"File not found: [{nameof(FrontApacheHttpdExe)}] = {FrontApacheHttpdExe}");
 
         _tmpDirectory = NewTempDirectory();
         ApacheConfigBuilderProperties minimalProperties = new()
@@ -89,7 +89,7 @@ public class TestingWindowsService{
         string installArguments = $"-k install -n {_dummyServiceName} -f \"{_httpdConfigRelativeToApacheRoot}\"";
         // CmdRunResult cmdRunResult = CmdRun(_httpdExe, installArguments);
         CmdRunResult cmdRunResult = CmdRun(new CmdRunSetUp
-            { Command = ApacheHttpdExe, Arguments = installArguments /*WorkingDirectory = ApacheRoot*/ });
+            { Command = FrontApacheHttpdExe, Arguments = installArguments /*WorkingDirectory = ApacheRoot*/ });
         Assume.That(cmdRunResult.ExitCode, Is.Zero,
             $"Fail on {nameof(cmdRunResult)}.{nameof(cmdRunResult.ExitCode)} = <{cmdRunResult.ExitCode}>\n" +
             cmdRunResult);
@@ -106,8 +106,8 @@ public class TestingWindowsService{
     }
 
     private static void StopAndRemoveDummyService(){
-        CmdRun(ApacheHttpdExe, $"-k stop -n {_dummyServiceName}");
-        CmdRun(ApacheHttpdExe, $"-k uninstall -n {_dummyServiceName}");
+        CmdRun(FrontApacheHttpdExe, $"-k stop -n {_dummyServiceName}");
+        CmdRun(FrontApacheHttpdExe, $"-k uninstall -n {_dummyServiceName}");
         ServiceController? serviceController = GetServiceControllerByNameOrDisplayName(_dummyServiceName);
         Assume.That(serviceController, Is.Null);
     }

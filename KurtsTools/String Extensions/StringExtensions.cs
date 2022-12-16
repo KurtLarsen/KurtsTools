@@ -22,7 +22,7 @@ public static class StringExtensions{
      * <returns>Second item</returns>
      */
     public static string SecondWord(this string value){
-        #pragma warning disable CS0618
+        #pragma warning disable CS0618  // warn on using obsolete element
         (string _, string rest) = value.FirstWordAndRest();
         #pragma warning restore CS0618
         return rest.FirstWord();

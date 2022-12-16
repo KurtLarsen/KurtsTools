@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KurtsTools", "KurtsTools\Ku
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing KurtsTools", "Testing KurtsTools\Testing KurtsTools.csproj", "{78486CBB-5CF5-4602-844F-E358FC27EB45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputGenerator", "OutputGenerator\OutputGenerator.csproj", "{49F93D66-CF03-4557-933D-762D35A1DC04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{78486CBB-5CF5-4602-844F-E358FC27EB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78486CBB-5CF5-4602-844F-E358FC27EB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78486CBB-5CF5-4602-844F-E358FC27EB45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F93D66-CF03-4557-933D-762D35A1DC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F93D66-CF03-4557-933D-762D35A1DC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F93D66-CF03-4557-933D-762D35A1DC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F93D66-CF03-4557-933D-762D35A1DC04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

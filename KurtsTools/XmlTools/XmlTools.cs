@@ -1,13 +1,12 @@
-﻿using System.Runtime.Versioning;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Versioning;
 using System.Xml;
 
 namespace NSKurtsTools;
 
 [SupportedOSPlatform("windows")]
 public static partial class KurtsTools{
-    public static XmlDocument StringToXmlDocument(string xmlString){
-        // if (xmlString == null) return null;
-
+    public static XmlDocument StringToXmlDocument([StringSyntax(StringSyntaxAttribute.Xml)]string xmlString){
         XmlDocument doc = new();
         doc.LoadXml(xmlString);
         return doc;

@@ -50,7 +50,7 @@ public class Testing_Class_ExitToolWrapper{
                 ExifToolStdOutStartsWith = "<?xml version='1.0' encoding='UTF-8'?>",
                 ExifToolErrOutStartsWith = "",
             }
-        ).SetName("1 ok");
+        ).SetName("1 valid jpg file");
 
         yield return new TestCaseData(
             new TestInput{
@@ -131,7 +131,7 @@ public class Testing_Class_ExitToolWrapper{
                 ExifToolStdOutStartsWith = "<?xml version='1.0' encoding='UTF-8'?>",
                 ExifToolErrOutStartsWith = "    2 image files read\r\n",
             }
-        ).SetName("2 ok");
+        ).SetName("2 valid jpg files");
 
         yield return new TestCaseData(
             new TestInput{
@@ -258,8 +258,10 @@ public class Testing_Class_ExitToolWrapper{
 
     [Test, TestCaseSource(nameof(Source))]
     public void Test_fn_GetExif(TestInput testInput, ExpectedResult expectedResult){
+        /* setup */
+        
         GetExifParams getExifParams = new();
-
+        
         foreach (string okFile in testInput.OkFiles){
             Assume.That(okFile, Does.Exist,
                 $"File in collection \"{nameof(testInput)}.{nameof(testInput.OkFiles)}\" not found:\n{okFile}\n");
@@ -284,11 +286,29 @@ public class Testing_Class_ExitToolWrapper{
             getExifParams.InputFiles.Add(notExistingDirectory);
         }
 
+        /* end of setup */
+        
         ResultOfGetExif resultOfFunctionResultOfGetExif = _instanceOfExifToolWrapper.GetExif(getExifParams);
 
         Assert.That(resultOfFunctionResultOfGetExif, Is.Not.Null);
 
         if (expectedResult.ConvertingToXmlException == null){
+            // todo: this test fails on the following TestCase, BUT ONLY ON FIRST RUN AFTER RIDER IS STARTED!!!
+            // - "1 valid jpg file"                         NOT EVERY TIME!!!
+            // - "1 directory - ending without backslash"
+            // - "2 valid jpg files"                        NOT EVERY TIME!!!
+            // The expected value of resultOfFunctionResultOfGetExif.ConvertingToXmlException was Null
+            // Actual value was
+            //      <System.Xml.XmlException: Root element is missing.
+            //          at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+            //          at System.Xml.XmlTextReaderImpl.ThrowWithoutLineInfo(String res)
+            //          at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+            //          at System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+            //          at System.Xml.XmlDocument.Load(XmlReader reader)
+            //          at System.Xml.XmlDocument.LoadXml(String xml)
+            //          at NSKurtsTools.ExifToolWrapper.GetExif(GetExifParams getExifParams) in C:\projects\c_sharp\KurtsTools\KurtsTools\PhotoTools\ExifToolWrapper.cs:line 48>
+            //
+            //          at NSTesting_KurtsTools.Testing_PhotoTools.Testing_Class_ExitToolWrapper.Test_fn_GetExif(TestInput testInput, ExpectedResult expectedResult) in C:\projects\c_sharp\KurtsTools\Testing KurtsTools\Testing PhotoTools\Testing class ExitToolWrapper.cs:line 294
             Assert.That(resultOfFunctionResultOfGetExif.ConvertingToXmlException, Is.Null,
                 $"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
         }
@@ -300,7 +320,13 @@ public class Testing_Class_ExitToolWrapper{
                 $"<{nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ConvertingToXmlException)}> failed");
         }
 
-
+        // todo: this test fails on the following TestCase, BUT ONLY ON FIRST RUN AFTER RIDER IS STARTED!!!
+        // - "empty directory  ending with backslash"           NOT EVERY TIME!!!
+        // - "empty directory - ending without backslash"
+        // - "not existing directory - ending with backslash"   NOT EVERY TIME!!!
+        // - "No files"                                         NOT EVERY TIME!!!
+        // The expected value of resultOfFunctionResultOfGetExif.ExitToolReturnCode was 0
+        // Actual value was 123456
         Assert.That(resultOfFunctionResultOfGetExif.ExitToolReturnCode, Is.EqualTo(expectedResult.ExifToolExitCode));
 
         if (expectedResult.ExifToolStdOutStartsWith.Equals(string.Empty)){
@@ -337,7 +363,7 @@ public class Testing_Class_ExitToolWrapper{
                     item.Group.Equals(aExpectedItem.Group) && item.Key.Equals(aExpectedItem.Key) &&
                     item.Value.Equals(aExpectedItem.Value));
                 Assert.That(findResult, Is.Not.Null,
-                    $"Failed finding expected {nameof(ExifItem)}{aExpectedItem.ToString()} in {nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}[{n}]:\n{resultOfFunctionResultOfGetExif.ListOfSingleFiles[n]}");
+                    $"Failed finding expected {nameof(ExifItem)}{aExpectedItem} in {nameof(resultOfFunctionResultOfGetExif)}.{nameof(resultOfFunctionResultOfGetExif.ListOfSingleFiles)}[{n}]:\n{resultOfFunctionResultOfGetExif.ListOfSingleFiles[n]}");
             }
         }
     }

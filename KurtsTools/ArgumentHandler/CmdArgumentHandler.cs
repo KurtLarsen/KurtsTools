@@ -1,8 +1,12 @@
-﻿namespace NSKurtsTools;
+﻿// ReSharper disable ClassNeverInstantiated.Global
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
+namespace NSKurtsTools;
 
 /// <summary>
 /// Class for handling command line arguments
 /// </summary>
+[Obsolete($"Class {nameof(CmdArgumentHandler)} is obsolete. Use {nameof(ArgumentAnalyzer)} instead")]
 public class CmdArgumentHandler{
     private readonly string[] _arguments;
 
@@ -11,6 +15,7 @@ public class CmdArgumentHandler{
      * <param name="arguments">An array of string, as given to a console program</param>
      * <example><code>x=new CmdArgumentHandler(args);</code></example>
      */
+    [Obsolete($"Class {nameof(CmdArgumentHandler)} is obsolete. Use {nameof(ArgumentAnalyzer)} instead")]
     public CmdArgumentHandler(string[] arguments){
         _arguments = arguments;
     }
@@ -37,6 +42,7 @@ public class CmdArgumentHandler{
      * </example>
      * <returns><see cref="CmdArgumentItem"/></returns>
      */
+    [Obsolete($"Class {nameof(CmdArgumentHandler)} is obsolete. Use {nameof(ArgumentAnalyzer)} instead")]
     public CmdArgumentItem GetArgumentItem(params string[] argumentToFind){
         char switchId = argumentToFind[0][0];
         for (int argsIndex = 0; argsIndex < _arguments.Length; argsIndex++){
@@ -52,6 +58,9 @@ public class CmdArgumentHandler{
         return new CmdArgumentItem(Array.Empty<string>());
     }
 
+    // public CmdArgumentItem GetArgumentItem(ArgumentItemPattern argumentItemPattern){
+        // return new CmdArgumentItem();
+    // }
 
     /// <summary>
     /// Look for one or more arguments keys in the given argument string
@@ -62,7 +71,7 @@ public class CmdArgumentHandler{
     /// CmdArgumentHandler cmdArgumentHandler = new CmdArgumentHandler(args);
     /// bool hasHelpKey = cmdArgumentHandler.ArgumentExists("-?","-help","/?","/help");
     /// </code></example>
-    [Obsolete($"Use {nameof(ArgumentKeyExists)}",true)]
+    [Obsolete($"Class {nameof(CmdArgumentHandler)} is obsolete. Use {nameof(ArgumentAnalyzer)} instead")]
     // ReSharper disable once UnusedMember.Global
     public bool ArgumentExists( params string[] keyToFind){
         return GetArgumentItem( keyToFind).Key != "";
@@ -77,9 +86,11 @@ public class CmdArgumentHandler{
     /// CmdArgumentHandler cmdArgumentHandler = new CmdArgumentHandler(args);
     /// bool hasHelpKey = cmdArgumentHandler.ArgumentKeyExists("-?","-help","/?","/help");
     /// </code></example>
+    [Obsolete($"Class {nameof(CmdArgumentHandler)} is obsolete. Use {nameof(ArgumentAnalyzer)} instead")]
     public bool ArgumentKeyExists( params string[] keyToFind){
         return GetArgumentItem( keyToFind).Key != "";
     }
 
 }
+
 

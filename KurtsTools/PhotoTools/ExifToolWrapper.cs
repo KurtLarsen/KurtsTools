@@ -14,47 +14,48 @@ namespace NSKurtsTools;
 public class ExifToolWrapper{
     private readonly string _pathToExifToolExe;
 
+    
     // private int _defaultTimeoutMilliSeconds = 1000;
     // bool outputDataHandlerIsRunning=false;
 
-    // constructor
+    /**
+     * <summary>Constructor</summary>
+     * <param name="pathToExifToolExe">The path to the external tool ExifTool</param>
+     * <seealso cref="!:https://exiftool.org/"/>
+     */
     public ExifToolWrapper(string pathToExifToolExe){
         _pathToExifToolExe = pathToExifToolExe;
         if (!File.Exists(pathToExifToolExe)) throw new FileNotFoundException(pathToExifToolExe);
     }
-
-
-    // ReSharper disable once MemberCanBePrivate.Global
-    // public int DefaultTimeoutMilliSeconds{
-    //     get => _defaultTimeoutMilliSeconds;
-    //     // ReSharper disable once UnusedMember.Global
-    //     set => _defaultTimeoutMilliSeconds = value;
-    // }
-
-
+    
     public ResultOfGetExif GetExif(GetExifParams getExifParams){
-        CmdRunResult x = CmdRun(_pathToExifToolExe, $" -X {getExifParams.InputFiles.ToArgumentString()}");
+        
+        /* run ExifTool */
+        
+        CmdRunResult cmdRunResult = CmdRun(_pathToExifToolExe, $" -X {getExifParams.InputFiles.ToArgumentString()}");
+        
+        /* rest of function: prepare the result of the CmdRun */
         
         ResultOfGetExif resultOfGetExifResult = new(){
-            ExitToolReturnCode = x.ExitCode,
-            ExifToolErrOut = x.ErrOut,
-            ExifToolStdOut = x.StdOut,
+            ExitToolReturnCode = cmdRunResult.ExitCode,
+            ExifToolErrOut = cmdRunResult.ErrOut,
+            ExifToolStdOut = cmdRunResult.StdOut,
             ListOfSingleFiles = new List<SingleFileExifData>(),
         };
 
         XmlDocument xmlDocument = new();
         
         try{
-            xmlDocument.LoadXml(x.StdOut);
+            xmlDocument.LoadXml(cmdRunResult.StdOut);
         } catch (Exception? e){
             resultOfGetExifResult.ConvertingToXmlException = e;
-            return resultOfGetExifResult;
+            return resultOfGetExifResult;   // ===> exit with error
         }
         
         XmlElement? root = xmlDocument.DocumentElement;
         if (root == null){
             resultOfGetExifResult.ConvertingToXmlException = new Exception("Root element not found in XML");
-            return resultOfGetExifResult;
+            return resultOfGetExifResult;   // === exit with error
         }
 
         foreach (XmlNode singleFileXmlExifData in root.ChildNodes){

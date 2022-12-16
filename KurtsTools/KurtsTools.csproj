@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Description>Directory Tools
@@ -27,8 +26,8 @@ Windows
 - GetServiceControllerByNameOrDisplayName
 - StopAndDeleteService
 - CmdRun
-- ArgumentHandler</Description>
-        <PackageVersion>0.0.21</PackageVersion>
+- ArgumentAnalyzer</Description>
+        <PackageVersion>0.0.22</PackageVersion>
         <Title>Kurts Tools Library</Title>
         <Copyright>Kurt Larsen</Copyright>
         <PackageId>KurtsTools</PackageId>
@@ -39,6 +38,8 @@ Windows
         <Version>0.0.3</Version>
         <PackageProjectUrl>https://github.com/KurtLarsen/KurtsTools</PackageProjectUrl>
         <PackageTags>tools windows c#</PackageTags>
+        <LangVersion>11</LangVersion>
+        <TargetFramework>net7.0</TargetFramework>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
